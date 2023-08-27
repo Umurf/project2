@@ -5,8 +5,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>커뮤니티</title>
-    <link rel="stylesheet" href="../../css/community.css">
+    <title>자유게시판</title>
+    <link rel="stylesheet" href="../../css/freeboard.css">
 </head>
 <body>
     <%@include file ="../../header.jsp" %>
@@ -14,7 +14,7 @@
         <div class="main-container">
             <div class="main-box1">
                 <div class="main-box1-titlebox">
-                    <div class="main-box1-title"><a href="./community.jsp">커뮤니티</a></div>
+                    <div class="main-box1-title">최근글목록</div>
                 </div>
                 <div class="main-box1-content">
                     <div class="main-box1-content-button">
@@ -31,7 +31,7 @@
             </div>
             <div class="main-box2">
                 <div class="main-box2-titlebox">
-                    <div class="main-box2-title">최근글목록 </div>
+                    <div class="main-box2-title"><a href="./community.jsp">커뮤니티</a><div id="title2">&gt;</div><div id="title2">자유게시판</div></div>
                 </div>
                 <div class="main-box2-content">
                     <div class="main-box2-content-content" id="content-category">
@@ -40,23 +40,23 @@
                         <div class="main-box2-content-date">작성날짜</div>
                         <div class="main-box2-content-count">조회수</div>
                     </div>
-                    <div class="main-box2-content-content" id="notice-content">
-                        <div class="main-box2-content-title"><a href="./readingNT.jsp"">공지사항</a></div>
-                        <div class="main-box2-content-nickname">관리자</div>
+                    <div class="main-box2-content-content">
+                        <div class="main-box2-content-title"><a href="./readingFB.jsp">헬린이 여자 근유통이 빡센데 원래 이런가요</a></div>
+                        <div class="main-box2-content-nickname">냐하하핳</div>
                         <div class="main-box2-content-date">2023-08-22</div>
-                        <div class="main-box2-content-count">155</div>
+                        <div class="main-box2-content-count">5</div>
                     </div>
-                    <div class="main-box2-content-content" id="notice-content">
-                        <div class="main-box2-content-title">공지사항</div>
-                        <div class="main-box2-content-nickname">관리자</div>
+                    <div class="main-box2-content-content">
+                        <div class="main-box2-content-title">헬린이 여자 근유통이 빡센데 원래 이런가요</div>
+                        <div class="main-box2-content-nickname">냐하하핳</div>
                         <div class="main-box2-content-date">2023-08-22</div>
-                        <div class="main-box2-content-count">5325</div>
+                        <div class="main-box2-content-count">5</div>
                     </div>
-                    <div class="main-box2-content-content" id="notice-content">
-                        <div class="main-box2-content-title">공지사항</div>
-                        <div class="main-box2-content-nickname">관리자</div>
+                    <div class="main-box2-content-content">
+                        <div class="main-box2-content-title">헬린이 여자 근유통이 빡센데 원래 이런가요</div>
+                        <div class="main-box2-content-nickname">냐하하핳</div>
                         <div class="main-box2-content-date">2023-08-22</div>
-                        <div class="main-box2-content-count">7595</div>
+                        <div class="main-box2-content-count">5</div>
                     </div>
                     <div class="main-box2-content-content">
                         <div class="main-box2-content-title">헬린이 여자 근유통이 빡센데 원래 이런가요</div>
@@ -124,9 +124,9 @@
                     </div>
                 </div>
             </div>
-            <!-- <div class="main-box4">
-                <button><a id="writing-button" href="./">글쓰기</a></button>
-            </div> -->
+            <div class="main-box4">
+                <button><a id="writing-button" href="./writing.jsp">글쓰기</a></button>
+            </div>
         </div>
     </main>
     <%@include file ="../../footer.jsp" %>
