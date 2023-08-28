@@ -35,7 +35,7 @@
                             </a>
                     </li>
                     <li>
-                        <a href="${pageContext.request.contextPath}/member/views/admin.jsp">관리자</a>
+                        <a href="${pageContext.request.contextPath}/member/views/admin.jsp">관리자 님</a>
                     </li>
                     <li>
                         <a href="${pageContext.request.contextPath}/index.jsp">로그아웃</a>
