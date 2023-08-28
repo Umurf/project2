@@ -3,8 +3,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>alarm</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>alarmMy</title>
+    <link rel="stylesheet" href="../../css/alarm.css">
+    <script defer src ="../../js/alarm.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.0.js" integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
+
 </head>
 <body>
 
@@ -50,7 +55,8 @@
                       <div class="main-box2-content-count">
                         <input type="checkbox" class="term">
                       </div>
-                        <div class="main-box2-content-title">                          <a href="../../board/views/adminReadNT.html">
+                        <div class="main-box2-content-title">
+                        <a href="../../board/views/adminReadNT.jsp">
                           헬린이 여자 근유통이 빡센데 원래 이런가요
                         </a></div>
                         <div class="main-box2-content-nickname">냐하하핳</div>
@@ -62,7 +68,7 @@
                         <input type="checkbox" class="term">
                       </div>
                         <div class="main-box2-content-title">
-                          <a href="../../board/views/adminReadNT.html">
+                          <a href="../../board/views/adminReadNT.jsp">
                             헬린이 여자 근유통이 빡센데 원래 이런가요
                           </a>
 
@@ -75,7 +81,8 @@
                       <div class="main-box2-content-count">
                         <input type="checkbox" class="term">
                       </div>
-                        <div class="main-box2-content-title">                          <a href="../../board/views/adminReadNT.html">
+                        <div class="main-box2-content-title">
+                        <a href="../../board/views/adminReadNT.jsp">
                           헬린이 여자 근유통이 빡센데 원래 이런가요
                         </a></div>
                         <div class="main-box2-content-nickname">냐하하핳</div>

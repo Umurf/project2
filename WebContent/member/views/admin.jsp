@@ -100,7 +100,7 @@
                         </div>
 
                             <div class="main-box3-1-content-title">
-                            <a href="../../board/views/adminReadNT.html">
+                            <a href="../../board/views/adminReadNT.jsp">
                                 요즘 근손실 너무 심한데 저 어떻하죠? ㅜㅜ
                             </a>
                             </div>
@@ -121,7 +121,7 @@
                         냐하하핳
                         </div>
                         <div class="main-box3-1-content-title">
-                        <a href="../../board/views/adminReadNT.html">
+                        <a href="../../board/views/adminReadNT.jsp">
                             헬린이 여자 근유통이 빡센데 원래 이런가요
                         </a>
                         </div>
@@ -142,7 +142,7 @@
                         냐하하핳
                         </div>
                         <div class="main-box3-1-content-title">
-                        <a href="../../board/views/adminReadNT.html">
+                        <a href="../../board/views/adminReadNT.jsp">
                             오늘 가입 했어요 >_< 잘부탁드립니다
                         </a>
                         </div>

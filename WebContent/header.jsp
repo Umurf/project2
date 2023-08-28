@@ -22,6 +22,7 @@
                             <a href="${pageContext.request.contextPath}/hmap/hmap.jsp">우리동네 헬스장</a>
                         </li>
                         <li>
+
                             <a href="${pageContext.request.contextPath}/board/project/community.jsp">커뮤니티</a>
                         </li>
                     </ul>

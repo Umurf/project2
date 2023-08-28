@@ -20,7 +20,7 @@
             <div class="main-box1">
                 <div class="main-box1-titlebox">
                     <div class="main-box1-title">알림
-                    <img src="../../img/bell.png" alt="" class="box1-title-img">
+                    <img src="./img/bell.png" alt="" class="box1-title-img">
                     </div>
                     
                 </div>
