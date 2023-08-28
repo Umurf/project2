@@ -5,8 +5,8 @@
 <head>
 <meta charset="UTF-8">
     <script src="https://code.jquery.com/jquery-3.7.0.js" integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
-    <script defer src="./js/main.js"></script>
-        <link rel="stylesheet" href="./css/main.css">
+    <script defer src="${pageContext.request.contextPath}/js/main.js"></script>
+        <link rel="stylesheet" href="${pageContext.request.contextPath}/css/main.css">
 <title>main</title>
 </head>
 <body>
@@ -16,7 +16,7 @@
             <div class="main-outline-container-banner-container"><!--main-banner의 시작-->
 	  <!-- <div class = "arrow prev">&lt;</div> -->
               <div class = "banner">
-                <a href="./board/project/community.jsp">
+                <a href="${pageContext.request.contextPath}/board/project/community.jsp">
                     <div class ='img'>
                         <img src = "https://ifh.cc/g/ChphJd.jpg">
                     </div> 
@@ -35,9 +35,9 @@
             <div class="main-outline-community-container-section">
                 <section class="main-outline-community-container-sec01">
                     <div class="main-communitybox">
-                        <div class="main-communitybox-title"><a href="./board/project/community.jsp"><h1>&nbsp;자유게시판</h1></a></div>
+                        <div class="main-communitybox-title"><a href="${pageContext.request.contextPath}/board/project/freeBoard.jsp"><h1>&nbsp;자유게시판</h1></a></div>
                         <div class="main-communitybox-contentbox">
-                            <div class="main-communitybox-titleline"><a href="./board/project/community.jsp">&nbsp;&nbsp;글의 제목이 들어갑니다.</a></div>
+                            <div class="main-communitybox-titleline"><a href="${pageContext.request.contextPath}/board/project/readingFB.jsp">&nbsp;&nbsp;글의 제목이 들어갑니다.</a></div>
                             <div class="main-communitybox-nickname">닉네임</div>
                         </div>
                         <div class="main-communitybox-contentbox">
@@ -61,9 +61,9 @@
                 </section>
                 <section class="main-outline-community-container-sec02">
                         <div class="main-communitybox">
-                            <div class="main-communitybox-title"><a href="./board/project/community.jsp"><h1>&nbsp;공지사항</h1></a></div>
+                            <div class="main-communitybox-title"><a href="${pageContext.request.contextPath}/board/project/notice.jsp"><h1>&nbsp;공지사항</h1></a></div>
                             <div class="main-communitybox-contentbox">
-                                <div class="main-communitybox-titleline"><a href="./board/project/community.jsp">&nbsp;&nbsp;글의 제목이 들어갑니다.</a></div>
+                                <div class="main-communitybox-titleline"><a href="${pageContext.request.contextPath}/board/project/readingNT.jsp">&nbsp;&nbsp;글의 제목이 들어갑니다.</a></div>
                                 <div class="main-communitybox-nickname">관리자</div>
                             </div>
                             <div class="main-communitybox-contentbox">

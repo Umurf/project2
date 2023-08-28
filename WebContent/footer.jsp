@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<link href="./css/footer.css" rel="stylesheet" >
+<link href="${pageContext.request.contextPath}/css/footer.css" rel="stylesheet" >
 <title>footer</title>
 </head>
 <body>
@@ -20,7 +20,7 @@
             <div class="footer-02-01">
                 <div>ⓒ2023 OWW All Rights Reserved</div>
                 <div>
-                    <a href="./main/project/privacy.jsp">개인정보처리방침</a>
+                    <a href="${pageContext.request.contextPath}/main/project/privacy.jsp">개인정보처리방침</a>
                 </div>
             </div>
         </div>
