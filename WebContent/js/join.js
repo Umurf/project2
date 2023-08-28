@@ -52,7 +52,7 @@
 
   function loginWithKakao() {
     Kakao.Auth.authorize({
-      redirectUri: 'http://127.0.0.1:5501/main/pro/main.html',
+      redirectUri: 'http://localhost:8888/oww_team_project/index.jsp',
       state: 'userme',
     });
   }
