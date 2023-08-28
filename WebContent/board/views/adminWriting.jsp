@@ -10,7 +10,7 @@
     <script defer src="../../js/adminWriting.js"></script>
 </head>
 <body>
-    <%@include file ="../../header.jsp" %>
+    <%@include file ="../../headeradmin.jsp" %>
     <main>
         <div class="main-container">
             <div class="main-box1-titlebox">
