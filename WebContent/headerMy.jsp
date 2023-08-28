@@ -4,22 +4,22 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<link rel="stylesheet" href="./css/headerMy.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/css/headerMy.css">
 <title>headerMy</title>
 </head>
 <body>
     <header>
         <div class="header-container">
             <div class="header-box1">
-                <div class="logo"><a href="./index.jsp">
-                <img src="./img/logo.png" alt=""></a></div>
+                <div class="logo"><a href="${pageContext.request.contextPath}/index.jsp">
+                <img src="${pageContext.request.contextPath}/img/logo.png" alt=""></a></div>
                 <div class="header-nav">
                     <ul class="header-nav">
                         <li>
-                            <a href="../../hmap/hmap.jsp">우리동네 헬스장</a>
+                            <a href="${pageContext.request.contextPath}/hmap/hmap.jsp">우리동네 헬스장</a>
                         </li>
                         <li>
-                            <a href="../../board/project/community.jsp">커뮤니티</a>
+                            <a href="${pageContext.request.contextPath}/board/project/community.jsp">커뮤니티</a>
                         </li>
                     </ul>
                 </div>
@@ -27,19 +27,19 @@
             <div class="header-box2">
                 <ul class="header-box2">
                     <li>
-                        <a href="../../member/views/alarmMy.jsp">
-                          <img src="./img/bell3.png" alt="" class="header-box2-img">
+                        <a href="${pageContext.request.contextPath}/member/views/alarmMy.jsp">
+                          <img src="${pageContext.request.contextPath}/img/bell3.png" alt="" class="header-box2-img">
                           </a>
                     </li>
                     
                     <li>
-                      <a href="../../member/project/login.jsp">
+                      <a href="${pageContext.request.contextPath}/member/project/login.jsp">
                         오늘은등운동 님
                       </a>
                   </li>
 
                     <li>
-                        <a href="../../main/project/main.jsp">로그아웃</a>
+                        <a href="${pageContext.request.contextPath}/index.jsp">로그아웃</a>
                     </li>
                 </ul>
             </div>

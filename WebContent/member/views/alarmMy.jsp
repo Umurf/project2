@@ -6,8 +6,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>alarmMy</title>
-    <link rel="stylesheet" href="../../css/alarmMy.css">
-    <script defer src ="../../js/alarmMy.js"></script>
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/alarmMy.css">
+    <script defer src ="${pageContext.request.contextPath}/js/alarmMy.js"></script>
     <script src="https://code.jquery.com/jquery-3.7.0.js" integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
 
 </head>
@@ -20,7 +20,7 @@
             <div class="main-box1">
                 <div class="main-box1-titlebox">
                     <div class="main-box1-title">알림
-                    <img src="./img/bell.png" alt="" class="box1-title-img">
+                    <img src="${pageContext.request.contextPath}/img/bell.png" alt="" class="box1-title-img">
                     </div>
                     
                 </div>
