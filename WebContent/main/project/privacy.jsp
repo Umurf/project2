@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-        <link rel="stylesheet" href="../../css/privacy.css">
+        <link rel="stylesheet" href="${pageContext.request.contextPath}/css/privacy.css">
 <title>privacy</title>
 </head>
 <body>
