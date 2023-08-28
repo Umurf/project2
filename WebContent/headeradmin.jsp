@@ -4,6 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<link rel="stylesheet" href="./css/headeradmin.css">
 <title>headeradmin</title>
 </head>
 <body>
@@ -11,17 +12,17 @@
         <div class="header-container">
             <div class="header-box1">
                 <div class="logo">
-                    <a href="../../main/project/main.html">
-                        <img src="../../img/logo.png" alt="">
+                    <a href="./index.jsp">
+                        <img src="./img/logo.png" alt="">
                     </a>
                 </div>
                 <div class="header-nav">
                     <ul class="header-nav">
                         <li>
-                            <a href="../../hmap/hmap.html">우리동네 헬스장</a>
+                            <a href="../../hmap/hmap.jsp">우리동네 헬스장</a>
                         </li>
                         <li>
-                            <a href="../../board/project/community.html">커뮤니티</a>
+                            <a href="../../board/project/community.jsp">커뮤니티</a>
                         </li>
                     </ul>
                 </div>
@@ -29,15 +30,15 @@
             <div class="header-box2">
                 <ul class="header-box2">
                     <li>
-                        <a href="../../member/views/alarm.html">
-                            <img src="../../img/bell3.png" alt="" class="header-box2-img">
+                        <a href="./member/views/alarm.jsp">
+                            <img src="./img/bell3.png" alt="" class="header-box2-img">
                             </a>
                     </li>
                     <li>
-                        <a href="../../member/views/admin.html">관리자</a>
+                        <a href="./member/views/admin.jsp">관리자</a>
                     </li>
                     <li>
-                        <a href="../../main/project/main.html">로그아웃</a>
+                        <a href="./main/project/main.jsp">로그아웃</a>
                     </li>
                 </ul>
             </div>

@@ -22,7 +22,7 @@
                             <a href="./hmap/hmap.jsp">우리동네 헬스장</a>
                         </li>
                         <li>
-                            <a href="./board/project/community.jsp">커뮤니티</a>
+                            <a href="../board/project/community.jsp">커뮤니티</a>
                         </li>
                     </ul>
                 </div>
