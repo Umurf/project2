@@ -11,11 +11,11 @@
   </welcome-file-list>
   
     <servlet>
-     <servlet-name>OwwFrontController</servlet-name>
+     <servlet-name>Oww</servlet-name>
      <servlet-class>com.oww.app.controller.OwwFrontController</servlet-class>
   </servlet>
   <servlet-mapping>
-     <servlet-name>OwwFrontController</servlet-name>
-     <url-pattern>/OwwFrontController</url-pattern>
+     <servlet-name>Oww</servlet-name>
+     <url-pattern>*.me</url-pattern>
   </servlet-mapping>
 </web-app>

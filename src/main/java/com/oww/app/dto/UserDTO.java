@@ -61,7 +61,10 @@ public class UserDTO {
 	
 	@Override
 	public String toString() {
-		return super.toString();
+	      return "UserDTO [userNumber = " + userNumber + 
+	            ", userEmail = " + userEmail + ", userPassword = " + userPassword
+	            + ", userNickname = " + userNickname + ", userDate = " + userDate
+	            + ", userLevel = " + userLevel + "]";
 	}
 	
 	
