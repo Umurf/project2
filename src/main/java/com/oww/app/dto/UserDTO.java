@@ -18,7 +18,8 @@ public class UserDTO {
 	private String userNickname;
 	private String userPassword;
 	private Timestamp userDate;
-	private char userLevel;
+	private char userLevel = '1';
+	//userLevel 기본값 1
 	
 	public UserDTO() {;}
 	

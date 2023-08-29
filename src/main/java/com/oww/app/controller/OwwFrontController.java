@@ -12,7 +12,7 @@ import com.oww.app.Result;
 /**
  * Servlet implementation class OwwFrontController
  */
-//@WebServlet("/OwwFrontController")
+
 public class OwwFrontController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -21,7 +21,6 @@ public class OwwFrontController extends HttpServlet {
      */
     public OwwFrontController() {
         super();
-        // TODO Auto-generated constructor stub
     }
 
 	/**
@@ -70,13 +69,13 @@ public class OwwFrontController extends HttpServlet {
 		         
 		         
 		         
-//		      case "/member/login.me":
-//		         System.out.println("login!!");
-//		         request.getRequestDispatcher("/member/project/login.jsp").forward(request, response);
-//		         break;
-//		      case "/member/loginOk.me":
-//		         System.out.println("loginOk!!");
-//		         break;
+		      case "/member/login.me":
+		         System.out.println("login!!");
+		         request.getRequestDispatcher("/member/project/login.jsp").forward(request, response);
+		         break;
+		      case "/member/loginOk.me":
+		         System.out.println("loginOk!!");
+		         break;
 		         
 		      }
 		      if(result != null) { // null 포인트 인셉션 
@@ -84,6 +83,7 @@ public class OwwFrontController extends HttpServlet {
 		        	 //리다이렉션을 필요로 한다면
 		             response.sendRedirect(result.getPath());
 		             //sendRedirect는 post일때 사용(경로설정)
+		             //회원 가입 후에는 바로 루트 페이지로 리다이렉션되도록
 		          }else {
 		        	//포워딩을 필요로 하면
 		             request.getRequestDispatcher(result.getPath()).forward(request, response);

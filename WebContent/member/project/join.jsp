@@ -6,8 +6,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>join</title>
-    <link rel="stylesheet" href="../../css/join.css">
-    <script defer src ="../../js/join.js"></script>
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/join.css">
+    <script defer src ="${pageContext.request.contextPath}/js/join.js"></script>
 </head>
 <body style="overflow: auto">
 
@@ -20,7 +20,7 @@
                   <h1>회원가입</h1>
               </div>
               
-              <form action="login.me" method="post" class="main-container-down">
+              <form action="${pageContext.request.contextPath}/project/joinOk.me" method="post" class="main-container-down">
                 
                   <div class="main-container-down-section01"></div>
 
@@ -29,7 +29,7 @@
                       이메일
                     </label>
                     <label>
-                      <input type="email" name="email" placeholder="이메일" value class="main-label1-input">
+                      <input type="email" name="userEmail" placeholder="이메일" class="main-label1-input">
                     </label>
 				 </div>
                    <!-- 이메일 인증 추후 추가 예정!
@@ -58,7 +58,7 @@
                       다른 유저와 겹치지 않도록 입력해주세요. (2~15자)
                     </div>
                     <label>
-                      <input type="text" name="nickname" placeholder="닉네임" value class="main-label1-input">
+                      <input type="text" name="userNickname" placeholder="닉네임" class="main-label1-input">
                     </label>
 
                   </div>
@@ -73,7 +73,7 @@
                       영문, 숫자를 포함한 8~12자리의 비밀번호를 입력해주세요.
                     </div>
                     <label>
-                      <input type="password" name="password" placeholder="비밀번호" value class="main-label1-input">
+                      <input type="password" name="userPassword" placeholder="비밀번호" class="main-label1-input">
                     </label>
 
                   </div>
@@ -87,7 +87,7 @@
                       비밀번호를 한 번 더 입력해 주세요.
                     </div>
                     <label>
-                      <input type="password" name="password" placeholder="비밀번호 확인" value class="main-label1-input">
+                      <input type="password" name="userPassword" placeholder="비밀번호 확인" class="main-label1-input">
                     </label>
                   </div>
 
@@ -110,7 +110,7 @@ integrity="sha384-70k0rrouSYPWJt7q9rSTKpiTfX6USlMYjZUtr1Du+9o4cGvhPAWxngdtVZDdEr
 
  카카오 API 끝 -->
 
-
+				
                   <div class="main-container-section">
                     <label class="main-label1">
                       약관동의
@@ -122,8 +122,8 @@ integrity="sha384-70k0rrouSYPWJt7q9rSTKpiTfX6USlMYjZUtr1Du+9o4cGvhPAWxngdtVZDdEr
 
 
 
-<!-- 잠시보류! 구동 하고 해보는 걸로
-모달 창 들어 가는 부분  
+
+<!--  모달 창 들어 가는 부분  -->
                       <div class="modal">
                         <div class="modal_body">
                           <strong>
@@ -191,22 +191,17 @@ integrity="sha384-70k0rrouSYPWJt7q9rSTKpiTfX6USlMYjZUtr1Du+9o4cGvhPAWxngdtVZDdEr
                         개인정보수집 및 이용동의<p class="span-p">(필수)</p>
                       </button>
 
- 모달 창 들어 가는 부분 끝 -->
+ <!--모달 창 들어 가는 부분 끝 -->
 
                     </div>
-                    
-          
                   </div>
 
                   <div class="main-container-section">
-                <!--   <a href="${pageContext.request.contextPath}/index.jsp"> -->
-                    <button class="main-b2" name="emailAuth" type="button">
+                    <button class="main-b2" name="emailAuth" >
                       회원가입하기
                     </button>
-              <!--    </a> -->
+
                   </div>
-
-
 
               </form>
               
