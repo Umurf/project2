@@ -19,7 +19,8 @@
               <div class="main-container-up">
                   <h1>회원가입</h1>
               </div>
-              <div class="main-container-down">
+              
+              <form action="login.me" method="post" class="main-container-down">
                 
                   <div class="main-container-down-section01"></div>
 
@@ -28,14 +29,15 @@
                       이메일
                     </label>
                     <label>
-                      <input type="emall" name="email" placeholder="이메일" value class="main-label1-input">
+                      <input type="email" name="email" placeholder="이메일" value class="main-label1-input">
                     </label>
-
-                    <div>
+				 </div>
+                   <!-- 이메일 인증 추후 추가 예정!
+                   <div>
                       <button class="main-b1" name="emailAuth" type="button">
                         이메일 인증하기
                       </button>
-                    </div>
+                    </div> 
                   </div>
 
                   <div class="main-container-section2">
@@ -45,6 +47,7 @@
                       <button class="main-b3">확 인</button>
                     </div>
                   </div>
+                  -->
 
                   <div class="main-container-section">
 
@@ -55,7 +58,7 @@
                       다른 유저와 겹치지 않도록 입력해주세요. (2~15자)
                     </div>
                     <label>
-                      <input type="nickname" name="nickname" placeholder="닉네임" value class="main-label1-input">
+                      <input type="text" name="nickname" placeholder="닉네임" value class="main-label1-input">
                     </label>
 
                   </div>
@@ -88,10 +91,10 @@
                     </label>
                   </div>
 
-<!-- 카카오 API 시작 -->
+<!-- 카카오 API 시작 (일딴 나중에)
 <script src="https://t1.kakaocdn.net/kakao_js_sdk/2.3.0/kakao.min.js"
 integrity="sha384-70k0rrouSYPWJt7q9rSTKpiTfX6USlMYjZUtr1Du+9o4cGvhPAWxngdtVZDdErlh" crossorigin="anonymous">
-</script><!-- 자바스크립트 SDK를 불러오는 코드  -->
+</script><!-- 자바스크립트 SDK를 불러오는 코드 
 <div class="kakao-box">
 <a  id="kakao-login-btn" href="javascript:loginWithKakao()">
 <img src="https://k.kakaocdn.net/14/dn/btroDszwNrM/I6efHub1SN5KCJqLm1Ovx1/o.jpg" width="222"
@@ -105,7 +108,7 @@ integrity="sha384-70k0rrouSYPWJt7q9rSTKpiTfX6USlMYjZUtr1Du+9o4cGvhPAWxngdtVZDdEr
 
 </div>
 
-<!-- 카카오 API 끝 -->
+ 카카오 API 끝 -->
 
 
                   <div class="main-container-section">
@@ -119,7 +122,8 @@ integrity="sha384-70k0rrouSYPWJt7q9rSTKpiTfX6USlMYjZUtr1Du+9o4cGvhPAWxngdtVZDdEr
 
 
 
-<!-- 모달 창 들어 가는 부분 -->
+<!-- 잠시보류! 구동 하고 해보는 걸로
+모달 창 들어 가는 부분  
                       <div class="modal">
                         <div class="modal_body">
                           <strong>
@@ -183,11 +187,11 @@ integrity="sha384-70k0rrouSYPWJt7q9rSTKpiTfX6USlMYjZUtr1Du+9o4cGvhPAWxngdtVZDdEr
 </span>
                         </div>
                       </div>
-                      <button class="btn-open-popup">
+                   <button class="btn-open-popup">
                         개인정보수집 및 이용동의<p class="span-p">(필수)</p>
                       </button>
 
-<!-- 모달 창 들어 가는 부분 끝 -->
+ 모달 창 들어 가는 부분 끝 -->
 
                     </div>
                     
@@ -195,16 +199,17 @@ integrity="sha384-70k0rrouSYPWJt7q9rSTKpiTfX6USlMYjZUtr1Du+9o4cGvhPAWxngdtVZDdEr
                   </div>
 
                   <div class="main-container-section">
-                  <a href="../../main/project/main.html">
+                <!--   <a href="${pageContext.request.contextPath}/index.jsp"> -->
                     <button class="main-b2" name="emailAuth" type="button">
                       회원가입하기
                     </button>
-                  </a>
+              <!--    </a> -->
                   </div>
 
 
 
-              </div>
+              </form>
+              
           </div>
       </div>
   </main>

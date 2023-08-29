@@ -52,8 +52,44 @@ public class OwwFrontController extends HttpServlet {
 		      String target = request.getRequestURI().substring(request.getContextPath().length());
 		      System.out.println(target);
 		      
+		      Result result = null;
+		      
 		      //단순 값비교는 if문보다 switch문이 효율성이 좋고 가독성도 좋다
 		      //break문을 꼭 써야한다!!
+		      switch(target) {
+		      case "/project/join.me":
+		         System.out.println("join!!");
+		         request.getRequestDispatcher("/member/project/join.jsp").forward(request, response);
+		         break;
+		      case "/project/joinOk.me":
+		         System.out.println("joinOk!!");
+		         result = new JoinOkController().execute(request, response);
+
+		         response.sendRedirect(request.getContextPath());
+		         break;
+		         
+		         
+		         
+//		      case "/member/login.me":
+//		         System.out.println("login!!");
+//		         request.getRequestDispatcher("/member/project/login.jsp").forward(request, response);
+//		         break;
+//		      case "/member/loginOk.me":
+//		         System.out.println("loginOk!!");
+//		         break;
+		         
+		      }
+		      if(result != null) { // null 포인트 인셉션 
+		          if(result.isRedirect()) {
+		        	 //리다이렉션을 필요로 한다면
+		             response.sendRedirect(result.getPath());
+		             //sendRedirect는 post일때 사용(경로설정)
+		          }else {
+		        	//포워딩을 필요로 하면
+		             request.getRequestDispatcher(result.getPath()).forward(request, response);
+		             //result 객체의 경로로 포워딩을 수행한다.
+		    	  }
+		      }
 		      
 	   }
 }
