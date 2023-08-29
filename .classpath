@@ -13,8 +13,8 @@
 	</classpathentry>
 	<classpathentry exported="true" kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
 	<classpathentry exported="true" kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
-	<classpathentry exported="true" kind="lib" path="D:/dev/web_1400_nej/JSP/workspace/oww_project/WebContent/WEB-INF/lib/mybatis-3.5.11.jar"/>
-	<classpathentry exported="true" kind="lib" path="D:/dev/web_1400_nej/JSP/workspace/oww_project/WebContent/WEB-INF/lib/ojdbc6.jar"/>
-	<classpathentry exported="true" kind="lib" path="D:/dev/web_1400_nej/JSP/workspace/oww_project/WebContent/WEB-INF/lib/tomcat-dbcp.jar"/>
+	<classpathentry exported="true" kind="lib" path="C:/study/web_1400_nej/JSP/workspace/oww_project/WebContent/WEB-INF/lib/mybatis-3.5.11.jar"/>
+	<classpathentry exported="true" kind="lib" path="C:/study/web_1400_nej/JSP/workspace/oww_project/WebContent/WEB-INF/lib/ojdbc6.jar"/>
+	<classpathentry exported="true" kind="lib" path="C:/study/web_1400_nej/JSP/workspace/oww_project/WebContent/WEB-INF/lib/tomcat-dbcp.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>

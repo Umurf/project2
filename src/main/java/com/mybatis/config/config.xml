@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration> <!-- 경로를 찾아 넣을 수 있다. -->
+	<typeAliases><!-- 별칭을 설정 가능하다 -->
+		<typeAlias  type ="com.oww.app.dto.UserDTO" alias="UserDTO"/>
+		<typeAlias  type ="com.oww.app.dto.CommentDTO" alias="CommentDTO"/>
+		<typeAlias  type ="com.oww.app.dto.FboardDTO" alias="FboardDTO"/>
+		<typeAlias  type ="com.oww.app.dto.FuploadDTO" alias="FuploadDTO"/>
+		<typeAlias  type ="com.oww.app.dto.NoticeDTO" alias="NoticeDTO"/>
+		<typeAlias  type ="com.oww.app.dto.NuploadDTO" alias="NuploadDTO"/>
+	</typeAliases>
+
+
+	<environments default="mysql">
+		<environment id="mysql"> <!-- 아이디값넣는곳 -->
+		<!-- 아래 mysql 설정값을 넣어 줄수 있다  -->
+			<transactionManager type="JDBC"/>
+			<!-- 아래 DB에 들어가기 위한 설정 값을 넣는 곳 -->
+			<dataSource type="POOLED"> <!-- POOLED = 기본설정값 -->
+				<!-- 아래 각각의 프로퍼티 설정 -->
+				<property name="driver" value = "com.mysql.cj.jdbc.Driver"/>
+				<property name="url" value="jdbc:mysql://localhost:3306/jsp_oww"/>
+				<property name="username" value="root"/>
+				<property name="password" value="1234"/>
+			</dataSource>
+		</environment>
+	</environments>
+	
+	<mappers><!-- 경로 -->
+		<mapper resource = "com/mybatis/mapper/UserMapper.xml"/>
+		<mapper resource = "com/mybatis/mapper/CommentMapper.xml"/>
+		<mapper resource = "com/mybatis/mapper/FboardMapper.xml"/>
+		<mapper resource = "com/mybatis/mapper/FuploadMapper.xml"/>
+		<mapper resource = "com/mybatis/mapper/NoticeMapper.xml"/>
+		<mapper resource = "com/mybatis/mapper/NuploadMapper.xml"/>
+	</mappers>
+	
+</configuration>
