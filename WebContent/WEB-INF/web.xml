@@ -10,5 +10,12 @@
     <welcome-file>default.htm</welcome-file>
   </welcome-file-list>
   
-  
+    <servlet>
+     <servlet-name>OwwFrontController</servlet-name>
+     <servlet-class>com.oww.app.controller.OwwFrontController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+     <servlet-name>OwwFrontController</servlet-name>
+     <url-pattern>/OwwFrontController</url-pattern>
+  </servlet-mapping>
 </web-app>
