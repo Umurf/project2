@@ -16,17 +16,22 @@
             <div class="main-outline-container-banner-container"><!--main-banner의 시작-->
 	  <!-- <div class = "arrow prev">&lt;</div> -->
               <div class = "banner">
-                <a href="${pageContext.request.contextPath}/board/project/community.jsp">
                     <div class ='img'>
-                        <img src = "https://ifh.cc/g/ChphJd.jpg">
+                    	<a href="${pageContext.request.contextPath}/board/project/community.jsp" >
+                        	<img src = "https://ifh.cc/g/ChphJd.jpg">
+                        </a>
                     </div> 
-                    <div class = "img">
-                        <img src = "https://ifh.cc/g/cKagym.jpg">
+                    <div class ="img">
+                    	<a href="${pageContext.request.contextPath}/hmap/hmap.jsp" >
+                        	<img src = "${pageContext.request.contextPath}/img/banner02.png">
+                        </a>
                     </div>
-                    <div class = "img">
-                        <img src = "https://ifh.cc/g/SattyA.jpg">
+                    <div class ="img">
+                        <a href="${pageContext.request.contextPath}/board/project/community.jsp" >
+                        	<img src = "${pageContext.request.contextPath}/img/banner03.png">
+                        </a>
                     </div>
-                </a>
+                
               </div>
               <!-- <div class="arrow next">&gt;</div> -->
             </div><!--banner 종료-->

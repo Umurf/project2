@@ -27,7 +27,7 @@
                             <strong>이메일</strong>
                         </div>
                         <label>
-                            <input type="emall" name="email" placeholder="이메일" value class="main-container-down-section02-box2">
+                            <input type="email" name="userEmail" placeholder="이메일" class="main-container-down-section02-box2">
                         </label>
                     </div>
                     <div class="main-container-down-section03">
@@ -38,7 +38,7 @@
                             다른 유저와 겹치지 않도록 입력해주세요. (2~15자)
                         </div>
                         <label>
-                            <input type="nickname" name="nickname" placeholder="닉네임" value class="main-container-down-section03-box2">
+                            <input type="text" name="userNickname" placeholder="닉네임" class="main-container-down-section03-box2">
                         </label>
                     </div>
                     <div class="main-container-down-section04">
@@ -49,7 +49,7 @@
                             영문, 숫자를 포함한 8~12자리의 비밀번호를 입력해주세요.
                         </div>
                         <label>
-                            <input type="password" name="password" placeholder="비밀번호" value class="main-container-down-section04-box2">
+                            <input type="password" name="userPassword" placeholder="비밀번호" class="main-container-down-section04-box2">
                         </label>
                     </div>
                     <div class="main-container-down-section05">
@@ -60,7 +60,7 @@
                             비밀번호를 한 번 더 입력해 주세요.
                         </div>
                         <label>
-                            <input type="password" name="password" placeholder="비밀번호 확인" value class="main-container-down-section05-box2">
+                            <input type="password" name="userPassword" placeholder="비밀번호 확인" class="main-container-down-section05-box2">
                         </label>
                     </div>
                     <div class="main-container-down-section07">

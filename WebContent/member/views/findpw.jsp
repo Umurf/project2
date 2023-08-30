@@ -21,7 +21,7 @@
                             이메일
                         </div>
                         <label>
-                            <input type="email" name="email" placeholder="이메일" value class="main-container-down-section01-box2">
+                            <input type="email" name="userEmail" placeholder="이메일" class="main-container-down-section01-box2">
                         </label>
 
                     </div>
