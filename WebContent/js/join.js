@@ -97,3 +97,147 @@
   }
 
     // 카카오 로그인 js 끝
+    
+/*-----비밀번호 확인 js 시작-----*/
+/*        function check_pw(){
+            var pw = document.getElementById('pw').value;
+            var SC = ["!","@","#","$","%","^","&","*","(",")","~","`","?"];
+            var check_SC = 0;
+ 
+            if(pw.length < 8 || pw.length>12){
+                window.alert('비밀번호는 8글자 이상, 12글자 이하만 이용 가능합니다.');
+                document.getElementById('pw').value='';
+            }
+            for(var i=0;i<SC.length;i++){
+                if(pw.indexOf(SC[i]) != -1){
+                    check_SC = 1;
+                }
+            }
+            if(check_SC == 0){
+                window.alert('!,@,#,$,% 등의 특수문자가 들어가 있지 않습니다.')
+                document.getElementById('pw').value='';
+            }
+            if(document.getElementById('pw').value !='' && document.getElementById('pw2').value!=''){
+                if(document.getElementById('pw').value==document.getElementById('pw2').value){
+                    document.getElementById('check').innerHTML='비밀번호가 일치합니다.'
+                    document.getElementById('check').style.color='blue';
+                }
+                else{
+                    document.getElementById('check').innerHTML='비밀번호가 일치하지 않습니다.';
+                    document.getElementById('check').style.color='red';
+                }
+            }
+        }*/
+/*-----비밀번호 확인 js 종료----- */
+/*-----유효성 검사의 시작-----*/
+    // 유효성 검사 메서드
+    function Validation() {
+        //변수에 저장
+        var pw = document.getElementById("pw")
+        var cpw = document.getElementById("cpw")
+        var mail = document.getElementById("mail")
+        var name = document.getElementById("uname")
+        var hobby = document.getElementsByName("consent")
+        var joinForm = document.joinForm;
+
+        // 정규식
+        // id, pw
+        var regIdPw = /^[a-zA-Z0-9]{8,12}$/;
+        // 이름
+        var regName = /^[가-힣a-zA-Z]{2,15}$/;
+        // 이메일
+        var regMail = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/;
+
+        //비밀번호 확인
+        if(pw.value == ""){
+            alert("비밀번호를 입력하세요.")
+            pw.focus();
+            return false;
+        }
+        //비밀번호 영어 대소문자 확인
+        else if(!regIdPw.test(pw.value)){
+            alert("비밀번호를 8~12자 영문 대소문자, 숫자만 입력하세요.")
+            pw.focus();
+            return false;
+        }
+
+        //비밀번호 확인
+        if(cpw.value !== pw.value){
+            alert("비밀번호와 동일하지 않습니다.")
+            cpw.focus();
+            return false;
+        }
+
+        //메일주소 확인
+        if(mail.value.length == 0){
+            alert("메일주소를 입력하세요.")
+            mail.focus();
+            return false;
+        }
+
+        else if(!regMail.test(mail.value)){
+            alert("잘못된 이메일 형식입니다.")
+            mail.focus();
+            return false;
+        }
+
+        //이름 확인 = 한글과 영어만 가능하도록
+        if(uname.value == ""){
+            alert("닉네임을 입력하세요.")
+            uname.focus();
+            return false;
+        }
+
+        else if(!regName.test(uname.value)){
+            alert("닉네임을 최소 2글자 이상, 한글과 영어만 입력하세요.")
+            uname.focus();
+            return false;
+        }
+
+        //개인정보처리동의서 확인
+        if(!checkedHobby(hobby)){
+            alert("개인정보처리동의서를 체크하세요.")
+            hobby.focus();
+            return false;
+        }
+
+        // 유효성 문제 없을 시 폼에 submit
+     //  document.joinForm.submit();
+    }
+
+    //관심분야 체크 확인
+    function checkedHobby(arr){
+        for(var i=0; i<arr.length; i++){
+            if(arr[i].checked == true){
+                return true;
+            }
+        }
+        return false;
+    }
+/*-----유효성 검사의 종료-----*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
