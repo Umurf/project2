@@ -16,4 +16,9 @@ public class UserDAO {
 	public void join(UserDTO userDTO) {
 		sqlSession.insert("user.join",userDTO);	
 	}
+	public UserDTO login(UserDTO userDTO) {
+		UserDTO user = sqlSession.selectOne("user.login", userDTO);
+		return user;
+	}
+	
 }
