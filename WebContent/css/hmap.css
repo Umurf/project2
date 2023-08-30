@@ -100,10 +100,11 @@ main{
 }
 .main-container-up-section2-searchbox{
     margin-left: 50px;
+    height: 30px;
     border-style: hidden;
     text-indent: 10px;
     border-bottom: 1px solid grey;
-    padding-bottom: 5px;
+    padding-bottom: 3px;
     /* border: 1px solid black; */
 }
 .main-container-up-section2-button{
