@@ -1,13 +1,11 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>join</title>
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/join.css">
-    <script defer src ="${pageContext.request.contextPath}/js/join.js"></script>
+    <link rel="stylesheet" href="../../css/join.css">
+    <script defer src ="../../js/join.js"></script>
     <script src="https://code.jquery.com/jquery-3.7.0.js" integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>  
 </head>
 <body style="overflow: auto">
@@ -211,7 +209,8 @@ alt="카카오 로그인 버튼" class="kakao-img"/>
                 <div class="main-container-section">
                   <input class="main-b2" name="emailAuth"
                   onclick="Validation()" 
-                  type="button" value="회원가입하기">
+                  type="submit" value="회원가입하기">
+                  </input>
                   <!-- <input type="reset" onclick="alert('초기화 했습니다.')" value="다시 입력"> -->
                 </div>
 
