@@ -1,12 +1,12 @@
 package com.oww.app.controller;
 
 import java.io.IOException;
-import java.rmi.ServerException;
 import java.sql.Timestamp;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -17,7 +17,7 @@ import com.oww.app.dto.UserDTO;
 
 public class JoinOkController implements Execute {
     
-    public Result execute(HttpServletRequest request, HttpServletResponse response) throws IOException, ServerException {
+    public Result execute(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
         UserDAO userDAO = new UserDAO();
         UserDTO userDTO = new UserDTO();
         Result result = new Result();
