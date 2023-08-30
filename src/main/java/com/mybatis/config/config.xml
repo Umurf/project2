@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration> <!-- 경로를 찾아 넣을 수 있다. -->
+	<settings>
+		<setting name = "mapUnderscoreToCamelCase" value = "true"/>
+	</settings>
+
 	<typeAliases><!-- 별칭을 설정 가능하다 -->
 		<typeAlias  type ="com.oww.app.dto.UserDTO" alias="UserDTO"/>
 		<typeAlias  type ="com.oww.app.dto.CommentDTO" alias="CommentDTO"/>

@@ -67,7 +67,6 @@ public class JoinOkController implements Execute {
         result.setRedirect(true);
         result.setPath(request.getContextPath());
         
-
         return null;
     }
 }

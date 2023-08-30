@@ -70,15 +70,24 @@ public class OwwFrontController extends HttpServlet {
 		         
 		         
 		         
-		      case "/member/login.me":
+		      case "/project/login.me":
 		         System.out.println("login!!");
 		         request.getRequestDispatcher("/member/project/login.jsp").forward(request, response);
 		         break;
-		      case "/member/loginOk.me":
-		         System.out.println("loginOk!!");
+		      case "/project/loginOk.me":
+			     System.out.println("loginOk!!");
+			     System.out.println(result);
+		    	 result = new LoginOkController().execute(request, response);
+		    	 System.out.println(result);
 		         break;
-		         
+		      case "/project/logoutOk.me":
+		          System.out.println("logout!!");
+		          result = new LogoutOkController().execute(request, response);
+		          break;
 		      }
+		      
+		      
+		      
 		      if(result != null) { // null 포인트 인셉션 
 		          if(result.isRedirect()) {
 		        	 //리다이렉션을 필요로 한다면
