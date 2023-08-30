@@ -211,7 +211,8 @@ alt="카카오 로그인 버튼" class="kakao-img"/>
                 <div class="main-container-section">
                   <input class="main-b2" name="emailAuth"
                   onclick="Validation()" 
-                  type="button" value="회원가입하기">
+                  type="submit" value="회원가입하기">
+                  </input>
                   <!-- <input type="reset" onclick="alert('초기화 했습니다.')" value="다시 입력"> -->
                 </div>
 
