@@ -148,6 +148,27 @@
         // 이메일
         var regMail = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/;
 
+        //메일주소 확인
+        if(mail.value.length == 0){
+            alert("메일주소를 입력하세요.")
+            mail.focus();
+            return false;
+        }
+        
+        //이름 확인 = 한글과 영어만 가능하도록
+        if(name.value == ""){
+            alert("닉네임을 입력하세요.")
+            name.focus();
+            return false;
+        }
+
+        else if(!regName.test(name.value)){
+            alert("닉네임을 최소 2글자 이상, 한글과 영어만 입력하세요.")
+            name.focus();
+            return false;
+        }
+        
+        
         //비밀번호 확인
         if(pw.value == ""){
             alert("비밀번호를 입력하세요.")
@@ -168,12 +189,7 @@
             return false;
         }
 
-        //메일주소 확인
-        if(mail.value.length == 0){
-            alert("메일주소를 입력하세요.")
-            mail.focus();
-            return false;
-        }
+
 
         else if(!regMail.test(mail.value)){
             alert("잘못된 이메일 형식입니다.")
@@ -181,18 +197,6 @@
             return false;
         }
 
-        //이름 확인 = 한글과 영어만 가능하도록
-        if(uname.value == ""){
-            alert("닉네임을 입력하세요.")
-            uname.focus();
-            return false;
-        }
-
-        else if(!regName.test(uname.value)){
-            alert("닉네임을 최소 2글자 이상, 한글과 영어만 입력하세요.")
-            uname.focus();
-            return false;
-        }
 
         //개인정보처리동의서 확인
         if(!checkedHobby(hobby)){
@@ -201,9 +205,7 @@
             return false;
         }
 
-        // 유효성 문제 없을 시 폼에 submit
-     //  document.joinForm.submit();
-    }
+
 
     //관심분야 체크 확인
     function checkedHobby(arr){
@@ -213,6 +215,10 @@
             }
         }
         return false;
+    }
+    
+     // 유효성 문제 없을 시 폼에 submit
+       document.joinForm.submit();
     }
 /*-----유효성 검사의 종료-----*/
 
