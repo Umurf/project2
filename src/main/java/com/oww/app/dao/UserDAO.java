@@ -13,7 +13,7 @@ public class UserDAO {
 		sqlSession = MyBatisConfig.getSqlSessionFactory().openSession(true);
 	}
 	
-	public void join(UserDTO UserDTO) {
-		sqlSession.insert("user.join",UserDTO);	
+	public void join(UserDTO userDTO) {
+		sqlSession.insert("user.join",userDTO);	
 	}
 }

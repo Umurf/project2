@@ -60,6 +60,7 @@ public class OwwFrontController extends HttpServlet {
 		         System.out.println("join!!");
 		         request.getRequestDispatcher("/member/project/join.jsp").forward(request, response);
 		         break;
+		         
 		      case "/project/joinOk.me":
 		         System.out.println("joinOk!!");
 		         result = new JoinOkController().execute(request, response);
