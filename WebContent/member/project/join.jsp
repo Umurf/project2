@@ -8,7 +8,7 @@
     <title>join</title>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/join.css">
     <script defer src ="${pageContext.request.contextPath}/js/join.js"></script>
-    <script src="https://code.jquery.com/jquery-3.7.0.js" integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>  
+  <%--    <script src="https://code.jquery.com/jquery-3.7.0.js" integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>  --%>  
 </head>
 <body style="overflow: auto">
 
@@ -68,9 +68,9 @@
                     placeholder="닉네임" 
                     class="main-label1-input" id="uname">
                   </label>
-
+					<div class="checkNickname-result"></div>
                 </div>
-
+				
                 
                 <div class="main-container-section">
 
@@ -224,8 +224,9 @@ alt="카카오 로그인 버튼" class="kakao-img"/>
     
 	<jsp:include page="../../footer.jsp"/>
 	
-	 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
  <script type="text/javascript">
+ //이메일 중복검사
 		 $('#mail').on('change',function(){
 		     //$(여기 에있는 값이 변경 되면) 아래 내용을 체그 하겠다.
 		     //HTML 문서의 .id 클래스에 속한 <input> 요소가 변경되면 아래의 함수가 실행됩니다.
@@ -243,7 +244,7 @@ alt="카카오 로그인 버튼" class="kakao-img"/>
  	      $.ajax({
  	         //$.ajax() 함수를 사용하여 AJAX 요청을 생성
  	         //ajax를 이용해서 key : value 값을 
- 	            url : "checkEmailOk.me",
+ 	            url : "${pageContext.request.contextPath}/project/checkEmailOk.me",
  	            //ajax 요청을 보낼 url
  	            type : "get",
  	            //get 메소드 형식
@@ -261,6 +262,28 @@ alt="카카오 로그인 버튼" class="kakao-img"/>
  	            }
  	         })
  	});
+		 
+		//닉네임 중복검사
+		 $('#uname').on('change',function(){
+		  let uname = $(this).val();
+		     
+		  console.log(this);
+		  console.log(uname);
+
+ 		
+ 	      $.ajax({
+ 	      url : "${pageContext.request.contextPath}/project/checkNicknameOk.me",
+ 	      type : "get",
+ 	      data : {"uname" : uname},
+ 	      success : function(result){
+ 	      console.log(result)
+ 	      $('.checkNickname-result').text(result);
+ 	      }
+ 	     })
+ 	    });
+		 
+		 
+		 
  </script>
 	
 </body>

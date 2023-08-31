@@ -12,6 +12,8 @@
 		<typeAlias  type ="com.oww.app.dto.FuploadDTO" alias="FuploadDTO"/>
 		<typeAlias  type ="com.oww.app.dto.NoticeDTO" alias="NoticeDTO"/>
 		<typeAlias  type ="com.oww.app.dto.NuploadDTO" alias="NuploadDTO"/>
+		
+		<typeAlias  type ="com.oww.app.vo.FboardVO" alias="FboardVO"/>
 	</typeAliases>
 
 

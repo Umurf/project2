@@ -23,5 +23,8 @@ public class UserDAO {
 		public boolean checkEmail(String userEmail) {
 			return (Integer)sqlSession.selectOne("user.checkEmail", userEmail) <= 0;
 	}
-	
+		
+		public boolean checkNickname(String userNickname) {
+			return (Integer)sqlSession.selectOne("user.checkNickname", userNickname) <= 0;
+	}
 }

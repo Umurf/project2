@@ -89,15 +89,13 @@ public class OwwFrontController extends HttpServlet {
 					System.out.println("checkEmail잘됨");
 					new CheckEmailOkController().execute(request, response);
 					break;
+					
+				case "/project/checkNicknameOk.me":
+					System.out.println("checkNickname잘됨");
+					new CheckNicknameOkController().execute(request, response);
+					break;
 		      }
-		      
 
-		      
-		      
-		      
-		      
-		      
-		      
 		      
 		      if(result != null) { // null 포인트 인셉션 
 		          if(result.isRedirect()) {
