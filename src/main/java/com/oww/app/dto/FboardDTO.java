@@ -72,7 +72,8 @@ public class FboardDTO {
 
 	@Override
 	public String toString() {
-		return super.toString();
+	      return fboardNumber + "," + fboardTitle + "," + fboardContent + "," 
+	              + fboardDate+ "," + fboardCount;
 	}
 	
 	
