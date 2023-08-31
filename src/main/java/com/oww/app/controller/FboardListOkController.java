@@ -18,6 +18,7 @@ public class FboardListOkController implements Execute{
 		
 		FboardDAO fboardDAO = new FboardDAO();
 		
+		System.out.println("======");
 		request.setAttribute("fboardList", fboardDAO.selectAll());
 		//이제 경로 설정 하면 끝
 		request.getRequestDispatcher("/board/project/freeBoard.jsp").forward(request, response);

@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>자유게시판</title>
     <link rel="stylesheet" href="../../css/freeboard.css">
+    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 </head>
 <body>
     <%@include file ="../../header.jsp" %>
@@ -33,73 +34,33 @@
                 <div class="main-box2-titlebox">
                     <div class="main-box2-title"><a href="./community.jsp">커뮤니티</a><div id="title2">&gt;</div><div id="title2">자유게시판</div></div>
                 </div>
-                <div class="main-box2-content">
-                    <div class="main-box2-content-content" id="content-category">
-                        <div class="main-box2-content-title">글제목</div>
-                        <div class="main-box2-content-nickname">닉네임</div>
-                        <div class="main-box2-content-date">작성날짜</div>
-                        <div class="main-box2-content-count">조회수</div>
-                    </div>
-                    <div class="main-box2-content-content">
-                        <div class="main-box2-content-title"><a href="./readingFB.jsp">헬린이 여자 근유통이 빡센데 원래 이런가요</a></div>
-                        <div class="main-box2-content-nickname">냐하하핳</div>
-                        <div class="main-box2-content-date">2023-08-22</div>
-                        <div class="main-box2-content-count">5</div>
-                    </div>
-                    <div class="main-box2-content-content">
-                        <div class="main-box2-content-title">헬린이 여자 근유통이 빡센데 원래 이런가요</div>
-                        <div class="main-box2-content-nickname">냐하하핳</div>
-                        <div class="main-box2-content-date">2023-08-22</div>
-                        <div class="main-box2-content-count">5</div>
-                    </div>
-                    <div class="main-box2-content-content">
-                        <div class="main-box2-content-title">헬린이 여자 근유통이 빡센데 원래 이런가요</div>
-                        <div class="main-box2-content-nickname">냐하하핳</div>
-                        <div class="main-box2-content-date">2023-08-22</div>
-                        <div class="main-box2-content-count">5</div>
-                    </div>
-                    <div class="main-box2-content-content">
-                        <div class="main-box2-content-title">헬린이 여자 근유통이 빡센데 원래 이런가요</div>
-                        <div class="main-box2-content-nickname">냐하하핳</div>
-                        <div class="main-box2-content-date">2023-08-22</div>
-                        <div class="main-box2-content-count">5</div>
-                    </div>
-                    <div class="main-box2-content-content">
-                        <div class="main-box2-content-title">헬린이 여자 근유통이 빡센데 원래 이런가요</div>
-                        <div class="main-box2-content-nickname">냐하하핳</div>
-                        <div class="main-box2-content-date">2023-08-22</div>
-                        <div class="main-box2-content-count">5</div>
-                    </div>
-                    <div class="main-box2-content-content">
-                        <div class="main-box2-content-title">헬린이 여자 근유통이 빡센데 원래 이런가요</div>
-                        <div class="main-box2-content-nickname">냐하하핳</div>
-                        <div class="main-box2-content-date">2023-08-22</div>
-                        <div class="main-box2-content-count">5</div>
-                    </div>
-                    <div class="main-box2-content-content">
-                        <div class="main-box2-content-title">헬린이 여자 근유통이 빡센데 원래 이런가요</div>
-                        <div class="main-box2-content-nickname">냐하하핳</div>
-                        <div class="main-box2-content-date">2023-08-22</div>
-                        <div class="main-box2-content-count">5</div>
-                    </div>
-                    <div class="main-box2-content-content">
-                        <div class="main-box2-content-title">헬린이 여자 근유통이 빡센데 원래 이런가요</div>
-                        <div class="main-box2-content-nickname">냐하하핳</div>
-                        <div class="main-box2-content-date">2023-08-22</div>
-                        <div class="main-box2-content-count">5</div>
-                    </div>
-                    <div class="main-box2-content-content">
-                        <div class="main-box2-content-title">헬린이 여자 근유통이 빡센데 원래 이런가요</div>
-                        <div class="main-box2-content-nickname">냐하하핳</div>
-                        <div class="main-box2-content-date">2023-08-22</div>
-                        <div class="main-box2-content-count">5</div>
-                    </div>
-                    <div class="main-box2-content-content" id="last_list">
-                        <div class="main-box2-content-title">헬린이 여자 근유통이 빡센데 원래 이런가요</div>
-                        <div class="main-box2-content-nickname">냐하하핳</div>
-                        <div class="main-box2-content-date">2023-08-22</div>
-                        <div class="main-box2-content-count">5</div>
-                    </div>
+                	<div class="main-box2-content">
+	                    <div class="main-box2-content-content" id="content-category">
+	                        <div class="main-box2-content-title">글제목</div>
+	                        <div class="main-box2-content-nickname">닉네임</div>
+	                        <div class="main-box2-content-date">작성날짜</div>
+	                        <div class="main-box2-content-count">조회수</div>
+	                    </div>
+	           <!-- ========== 게시글 목록 =========== -->
+                <c:choose>
+	                <c:when test = "${not empty fboardList}">
+						<c:forEach var="fboard" items="${fboardList}">
+						    <div class="main-box2-content-content">
+						        <div class="main-box2-content-title"><a href="./readingFB.jsp">${fboard.getFboardTitle()}</a></div>
+						        <div class="main-box2-content-nickname">${fboard.getFboardNickname()}</div>
+						        <div class="main-box2-content-date">${fboard.getFboardDate()}</div>
+						        <div class="main-box2-content-count">${fboard.getFboardCount()}</div>
+						    </div>
+						</c:forEach>
+	                </c:when>
+	                
+		         <c:otherwise>
+	          		<tr>
+	          			<td colspan = "5" align = "center" > 등록된 게시물이 없습니다 </td>
+	          		</tr>
+	          	</c:otherwise>
+	         </c:choose>
+	         <!-- ========== 게시글 목록 끝=========== -->
                 </div>
             </div>
             <div class="main-box3">
