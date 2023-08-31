@@ -48,6 +48,7 @@ public class FboardFrontController extends HttpServlet {
 		
 		switch(target) {
 		case "/project/fboardListOk.fb":
+			System.out.println("=======");
 			result = new FboardListOkController().execute(request, response);
 			break;
 		}

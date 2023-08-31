@@ -4,7 +4,7 @@ import java.sql.Timestamp;
 
 public class FboardVO {
 //	u.user_number
-//	u.user_email
+//	u.user_nickname
 //	f.fboard_number
 //	f.fboard_title
 //	f.fboard_content, 
@@ -12,7 +12,7 @@ public class FboardVO {
 //	f.fboard_count 
 	
 	private int userNumber;
-	private String userEmail;
+	private String userNickname;
 	private int fboardNumber;
 	private String fboardTitle;
 	private String fboardContent;
@@ -29,12 +29,12 @@ public class FboardVO {
 		this.userNumber = userNumber;
 	}
 
-	public String getUserEmail() {
-		return userEmail;
+	public String getUserNickname() {
+		return userNickname;
 	}
 
-	public void setUserEmail(String userEmail) {
-		this.userEmail = userEmail;
+	public void setUserNickname(String userNickname) {
+		this.userNickname = userNickname;
 	}
 
 	public int getFboardNumber() {
@@ -79,7 +79,7 @@ public class FboardVO {
 
 	@Override
 	public String toString() {
-		 return userNumber + "," + userEmail+ "," + fboardNumber + "," + fboardTitle + ","
+		 return userNumber + "," + userNickname+ "," + fboardNumber + "," + fboardTitle + ","
 		            + fboardContent + "," + fboardDate+ "," + fboardCount;
 		      
 	}
