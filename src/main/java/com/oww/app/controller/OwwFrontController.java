@@ -84,7 +84,18 @@ public class OwwFrontController extends HttpServlet {
 		          System.out.println("logout!!");
 		          result = new LogoutOkController().execute(request, response);
 		          break;
+		          
+				case "/project/checkEmailOk.me":
+					System.out.println("checkEmail잘됨");
+					new CheckEmailOkController().execute(request, response);
+					break;
 		      }
+		      
+
+		      
+		      
+		      
+		      
 		      
 		      
 		      

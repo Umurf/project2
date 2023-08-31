@@ -9,4 +9,10 @@
 	<select id = "login" parameterType = "UserDTO" resultType = "UserDTO">
 		select user_email, user_password from tbl_user where user_email = #{userEmail} AND user_password = #{userPassword}
 	</select>
+	
+		<!-- 아이디의 중복 검사 쿼리 -->
+	<select id="checkEmail" parameterType="string" resultType="_int">
+		select count(user_number) from tbl_user
+		where user_email = #{userEmail}
+	</select>
 </mapper>
