@@ -36,7 +36,8 @@
                     placeholder="이메일" 
                     class="main-label1-input" id="mail">
                   </label>
-       </div>
+                  <div class="checkEmail-result"></div>
+       				</div>
                  <!-- 이메일 인증 추후 추가 예정!
                  <div>
                     <button class="main-b1" name="emailAuth" type="button">
@@ -222,6 +223,45 @@ alt="카카오 로그인 버튼" class="kakao-img"/>
 </main>
     
 	<jsp:include page="../../footer.jsp"/>
+	
+	 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+ <script type="text/javascript">
+		 $('#mail').on('change',function(){
+		     //$(여기 에있는 값이 변경 되면) 아래 내용을 체그 하겠다.
+		     //HTML 문서의 .id 클래스에 속한 <input> 요소가 변경되면 아래의 함수가 실행됩니다.
+		     //$(this)를 통해 변경된 <input> 요소의 값을 가져와 id 변수에 저장
+		     let mail = $(this).val();
+		     //이벤트의 값을 가져와서 id에 저장
+		     // $(this) : 이벤트가 발생한 요소 자체
+		     //val() input 태그에 들어온 요소를 반환 하는 
+		     
+		     console.log(this);
+		     console.log(mail);
+		     //변경된 요소와 id 값을 console.log()를 통해 출력
+
+ 		
+ 	      $.ajax({
+ 	         //$.ajax() 함수를 사용하여 AJAX 요청을 생성
+ 	         //ajax를 이용해서 key : value 값을 
+ 	            url : "checkEmailOk.me",
+ 	            //ajax 요청을 보낼 url
+ 	            type : "get",
+ 	            //get 메소드 형식
+ 	            data : {"mail" : mail},
+ 	            //data의 형식
+ 	            //서버 측에서 받아 처리할 데이터
+ 	            success : function(result){
+ 	            //요청이 성공적으로 완료되면 ->콜백함수
+ 	               console.log(result)
+ 	            //result 를 반환
+ 	               $('.checkEmail-result').text(result);
+ 	            //success 콜백 함수는 요청이 성공적으로 완료되었을 때 실행됩니다.
+ 	            //서버에서 반환한 결과를 result 변수에 저장하고, 그 결과를 콘솔에 출력합니다.
+ 	            //또한 .checkId-result 클래스를 가진 요소의 텍스트를 result로 설정하여 결과를 화면에 출력합니다.
+ 	            }
+ 	         })
+ 	});
+ </script>
 	
 </body>
 
