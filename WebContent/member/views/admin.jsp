@@ -6,8 +6,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>오운완_관리자</title>
-    <link rel="stylesheet" href="../../css/admin.css">
-    <script defer src ="../../js/admin.js"></script>
+    <link rel="stylesheet" href="{pageContext.request.contextPath}/css/admin.css">
+    <script defer src ="{pageContext.request.contextPath}/js/admin.js"></script>
 </head>
 <body>
 	
