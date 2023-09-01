@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -37,14 +38,19 @@
             </div><!--banner 종료-->
         </div>
         <div class="main-outline-community-container">
-            <div class="main-outline-community-container-section">
-                <section class="main-outline-community-container-sec01">
-                    <div class="main-communitybox">
-                        <div class="main-communitybox-title"><a href="${pageContext.request.contextPath}/board/project/freeBoard.jsp"><h1>&nbsp;자유게시판</h1></a></div>
-                        <div class="main-communitybox-contentbox">
-                            <div class="main-communitybox-titleline"><a href="${pageContext.request.contextPath}/board/project/readingFB.jsp">&nbsp;&nbsp;글의 제목이 들어갑니다.</a></div>
-                            <div class="main-communitybox-nickname">닉네임</div>
-                        </div>
+			<div class="main-outline-community-container-section">
+				<!-- 자유게시판 시작 -->
+				<section class="main-outline-community-container-sec01">
+					<div class="main-communitybox">
+						<div class="main-communitybox-title">
+							<a
+								href="${pageContext.request.contextPath}/board/project/freeBoard.jsp"><h1>&nbsp;자유게시판</h1></a>
+						</div>
+						<div class="main-communitybox-contentbox">
+							<div class="main-communitybox-titleline">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;제목</div>
+							<div class="main-communitybox-nickname">닉네임</div>
+						</div>
+						<!-- 
                         <div class="main-communitybox-contentbox">
                             <div class="main-communitybox-titleline">&nbsp;&nbsp;안녕하세요 저는 오운완팀입니다.</div>
                             <div class="main-communitybox-nickname">닉네임1</div>
@@ -61,16 +67,44 @@
                             <div class="main-communitybox-titleline">&nbsp;&nbsp;안녕하세요 저는 오운완팀입니다.</div>
                             <div class="main-communitybox-nickname">닉네임4</div>
                         </div>
-                    </div>
-                
-                </section>
-                <section class="main-outline-community-container-sec02">
-                        <div class="main-communitybox">
-                            <div class="main-communitybox-title"><a href="${pageContext.request.contextPath}/board/project/notice.jsp"><h1>&nbsp;공지사항</h1></a></div>
-                            <div class="main-communitybox-contentbox">
-                                <div class="main-communitybox-titleline"><a href="${pageContext.request.contextPath}/board/project/readingNT.jsp">&nbsp;&nbsp;글의 제목이 들어갑니다.</a></div>
-                                <div class="main-communitybox-nickname">관리자</div>
-                            </div>
+                      -->
+
+
+						<!-- 자유게시판 끝 -->
+						<!-- ========== 자유게시판게시글 목록 =========== -->
+						<c:choose>
+							<c:when test="${not empty indexFboardList}">
+								<c:forEach var="indexfboard" items="${indexFboardList}">
+									<div class="main-communitybox-contentbox">
+										<div class="main-communitybox-titleline">
+											<a href="">${indexfboard.getFboardTitle()}</a>
+										</div>
+										<div class="main-communitybox-nickname">${indexfboard.getUserNickname()}</div>
+									</div>
+								</c:forEach>
+							</c:when>
+
+							<c:otherwise>
+								<tr>
+									<td colspan="5" align="center">등록된 게시물이 없습니다</td>
+								</tr>
+							</c:otherwise>
+						</c:choose>
+					</div>
+				</section>
+				<!-- ========== 자유게시판게시글 목록 끝=========== -->
+				<!-- 공지사항 시작 -->
+				<section class="main-outline-community-container-sec02">
+					<div class="main-communitybox">
+						<div class="main-communitybox-title">
+							<a
+								href="${pageContext.request.contextPath}/board/project/notice.jsp"><h1>&nbsp;공지사항</h1></a>
+						</div>
+						<div class="main-communitybox-contentbox">
+							<div class="main-communitybox-titleline">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;제목</div>
+							<div class="main-communitybox-nickname">관리자</div>
+						</div>
+						<!--  
                             <div class="main-communitybox-contentbox">
                                 <div class="main-communitybox-titleline">&nbsp;&nbsp;안녕하세요 저는 오운완팀입니다.</div>
                                 <div class="main-communitybox-nickname">관리자</div>
@@ -87,10 +121,33 @@
                                 <div class="main-communitybox-titleline">&nbsp;&nbsp;안녕하세요 저는 오운완팀입니다.</div>
                                 <div class="main-communitybox-nickname">관리자</div>
                             </div>
-                        </div>
-                </section>
-            </div>
-        </div>
+                            -->
+
+				<!-- 공지사항 끝 -->
+				<!-- ========== 자유게시판게시글 목록 =========== -->
+				<c:choose>
+					<c:when test="${not empty indexNoticeList}">
+						<c:forEach var="indexnotice" items="${indexNoticeList}">
+							<div class="main-communitybox-contentbox">
+								<div class="main-communitybox-titleline">
+									<a href="">${indexnotice.getNoticeTitle()}</a>
+								</div>
+								<div class="main-communitybox-nickname">${indexnotice.getUserNickname()}</div>
+							</div>
+						</c:forEach>
+					</c:when>
+
+					<c:otherwise>
+						<tr>
+							<td colspan="5" align="center">등록된 게시물이 없습니다</td>
+						</tr>
+					</c:otherwise>
+				</c:choose>
+				</div>
+			</section>
+			</div>
+			<!-- ========== 자유게시판게시글 목록 끝=========== -->
+		</div>
     </main><!--main종료-->
     
 
