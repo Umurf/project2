@@ -104,13 +104,15 @@ div.next{
   height: 450px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  /* justify-content: center; */
   align-items: center;
   /* background-color: antiquewhite; */
 }
 .main-communitybox-title{
   width: 450px;
   height: 50px;
+  display: flex;
+  align-items:center;
   /* background-color: aqua; */
 }
 .main-communitybox-contentbox{
