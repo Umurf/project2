@@ -21,4 +21,26 @@
 		select count(user_number) from tbl_user
 		where user_nickname = #{userNickname}
 	</select>
+		<!-- 관리자가 회원의 모든 정보를 가져와서 출력! -->
+	<select id="getMemberInfo" parameterType="UserDTO" resultType="UserDTO">
+		SELECT * From tbl_user
+	</select>
+	
+	<select id="searchByEmail" parameterType="SearchVO" resultType="UserDTO">
+		SELECT user_number, user_email, user_nickname, user_password, user_date, user_level
+		FROM tbl_user
+		where user_email like concat('%', #{keyword}, '%')
+	</select>
+	
+	
+	<select id="searchByNickname" parameterType="SearchVO" resultType="UserDTO">
+		SELECT user_number, user_email, user_nickname, user_password, user_date, user_level
+		FROM tbl_user
+		where user_nickname like concat('%', #{keyword}, '%')
+	</select>
 </mapper>
+
+
+
+
+

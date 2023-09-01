@@ -15,6 +15,7 @@
 		
 		<typeAlias  type ="com.oww.app.vo.FboardVO" alias="FboardVO"/>
 		<typeAlias  type ="com.oww.app.vo.NoticeVO" alias="NoticeVO"/>
+		<typeAlias  type ="com.oww.app.vo.SearchVO" alias="SearchVO"/>
 	</typeAliases>
 
 
