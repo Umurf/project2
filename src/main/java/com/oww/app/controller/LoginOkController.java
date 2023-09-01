@@ -26,13 +26,17 @@ public class LoginOkController implements Execute{
 		
 		result = userDAO.login(userDTO);
 		
-		System.out.println(result.getUserNickname());
-		System.out.println(result.getUserNumber());
+//		System.out.println("==============================================");
+//		System.out.println(userDTO);
+//		System.out.println(result.getUserNickname());
+//		System.out.println(result.getUserNumber());
+//		System.out.println("==============================================");
 
 		//회원의 번호, 이름을 세션에 저장한다
 		HttpSession session = request.getSession();
 		session.setAttribute("userNumber", result.getUserNumber());
 		session.setAttribute("userNickname", result.getUserNickname());
+		
 		
 		response.sendRedirect(request.getContextPath());
 		

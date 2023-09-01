@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>로그인</title>
-    <link rel="stylesheet" href="../../css/login.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/login.css">
 </head>
 <body>
     <%@include file ="../../header.jsp" %>
@@ -21,8 +21,6 @@
                     </div>
                     <div class="input-button"><button id="input-box-button">로그인</button></div>
                 </form>
-                
-                
                 
             </div>
             <div class="find-pw"><a href="../views/findpw.jsp">비밀번호찾기</a></div>
