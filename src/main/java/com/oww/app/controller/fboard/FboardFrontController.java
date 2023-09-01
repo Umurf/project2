@@ -1,4 +1,4 @@
-package com.oww.app.controller;
+package com.oww.app.controller.fboard;
 
 import java.io.IOException;
 

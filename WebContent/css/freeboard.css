@@ -126,7 +126,7 @@ display: block;
     /* background-color: pink; */
     font-size: 13px;
 }
-.main-box2-content-content{
+.main-box2-content-content1{
   width: 980px;
   height: 54px;
   display: flex;
@@ -139,6 +139,48 @@ display: block;
   font-size: 14px;
   font-weight: bold;
 }
+.main-box2-content-title1{
+  width: 680px;
+  height: 54px;
+  display: flex;
+  align-items: center;
+  /* background-color: aquamarine; */
+  text-indent: 13px;
+}
+.main-box2-content-nickname1{
+  width: 120px;
+  height: 54px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background-color: blueviolet; */
+}
+.main-box2-content-date1{
+  width: 130px;
+  height: 54px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background-color: rgb(66, 95, 84); */
+}
+.main-box2-content-count1{
+  width: 50px;
+  height: 54px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background-color: rgb(47, 37, 142); */
+}
+/* 게시글 목록 */
+.main-box2-content-content{
+  width: 980px;
+  height: 54px;
+  display: flex;
+  align-items: center;
+  border-bottom: 0.5px solid #ddd;
+  /* background-color: antiquewhite; */
+}
+
 .main-box2-content-title{
   width: 680px;
   height: 54px;
@@ -171,6 +213,11 @@ display: block;
   align-items: center;
   /* background-color: rgb(47, 37, 142); */
 }
+
+
+/* 게시글 목록 끝 */
+
+
 #lastlist{
   border-bottom: 1px solid  gray;
 }
