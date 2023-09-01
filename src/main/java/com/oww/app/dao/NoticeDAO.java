@@ -1,6 +1,7 @@
 package com.oww.app.dao;
 
 import java.util.List;
+import java.util.Map;
 
 import org.apache.ibatis.session.SqlSession;
 
@@ -16,5 +17,8 @@ public class NoticeDAO {
 	
 	public List<NoticeVO> selectAll(){
 		return sqlSession.selectList("notice.selectAll");
+	}
+	public List<NoticeVO> selectPage(Map<String, Integer> pageMap) {
+		return sqlSession.selectList("board.selectPage", pageMap);
 	}
 }

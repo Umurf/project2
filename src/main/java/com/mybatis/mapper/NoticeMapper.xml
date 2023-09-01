@@ -15,4 +15,12 @@
 		from tbl_user u join tbl_notice n 
 		on u.user_number = n.user_number 
 	</select>
+	
+	<select id="selectPage" resultType="BoardVO" parameterType="map">
+		select m.member_number, m.member_id, b.board_number , b.board_title , b.board_content , b.board_date , b.board_read_count
+		from tbl_member m join tbl_board b
+		on m.member_number = b.member_number
+		order by board_number desc
+		limit #{startRow}, #{rowCount}
+	</select>
 </mapper>
