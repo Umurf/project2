@@ -1,13 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>오운완_관리자</title>
-    <link rel="stylesheet" href="{pageContext.request.contextPath}/css/admin.css">
-    <script defer src ="{pageContext.request.contextPath}/js/admin.js"></script>
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/admin.css">
+    <script defer src ="${pageContext.request.contextPath}/js/admin.js"></script>
 </head>
 <body>
 	
@@ -20,21 +21,21 @@
                     <div class="main-box1-title">
                         관리자 &gt; 회원 & 게시 글 관리 </div>
                     </div>
-                <div class="main-box1-content">
+                <form class="main-box1-content" action="${pageContext.servletContext.contextPath}/project/admin.me" method="post">
                             <div class="main-box3-searchbox">
                                     <div>
                                         <span>
                                             ⊙ 검 색 어 :
                                         </span>
                                     </div>
-                                <select name="search-target" id="">
-                                    <option value="title">이메일</option>
-                                    <option value="writer">닉네임</option>
+                                <select name="searchType" id="">
+                                    <option value="email">이메일</option>
+                                    <option value="nickname">닉네임</option>
                                 </select>
-                                <input type="text">
+                                <input type="text" name="keyword">
                                 <button>검 색</button>
                             </div>
-                </div>
+                </form>
 
                 <!-- 회원 정보 창 시작-->
                 <div class="main-box1-1">
@@ -42,7 +43,7 @@
                     <div class="main-box2-title">
                         <div class="main-box2-content-content">
                             <div class="main-box2-content-title">
-                            회원번호
+                			회원번호
                             </div>
                             <div class="main-box2-content-email">
                             이메일
@@ -53,23 +54,28 @@
                         </div>
                     </div>
 
-                    <div class="main-box2-1-title">
-                        <div class="main-box2-content-content">
-                            <div class="main-box2-content-title">
-                            123123
+	           <!-- ========== 회원 정보 목록 =========== -->
+                <c:choose>
+	                <c:when test = "${not empty userList}">
+						<c:forEach var="user" items="${userList}">
+						    <div class="main-box2-content-content">
+						        <div class="main-box2-content-title">${user.getUserNumber()}</div>
+						        <div class="main-box2-content-email">${user.getUserEmail()}</div>
+						        <div class="main-box2-content-nickname">${user.getUserNickname()}</div>
+						        <div class="main-box2-content-date">${user.getUserDate()}</div>
+						        <div class="main-box2-content-management"><button onclick="call_confirm()" class="management_b">삭제</button>
                             </div>
-                            <div class="main-box2-content-email">
-                            euijin1028@gmail.com
-                            </div>
-                            <div class="main-box2-content-nickname">냐하하핳</div>
-                            <div class="main-box2-content-date">2023-08-22</div>
-                            <div class="main-box2-content-management">
-                            <button onclick="call_confirm()" class="management_b">삭제</button>
-                            </div>
-                        </div>
-                    </div>
-
-                <!-- 회원 정보 창 끝-->
+						    </div>
+						</c:forEach>
+	                </c:when>
+	                
+		         <c:otherwise>
+	          		<tr>
+	          			<td colspan = "5" align = "center" > &nbsp;&nbsp;&nbsp;&nbsp;등록된 게시물이 없습니다 </td>
+	          		</tr>
+	          	</c:otherwise>
+	         </c:choose>
+	         <!-- ========== 회원 정보 목록 종료=========== -->
             <div class="main-box2">
                 
                 <div class="main-box2-title">
@@ -88,74 +94,27 @@
                 </div>
 
                 <div class="main-box2-content">
-
-
-                <div class="main-box3-1-title">
-                    <div class="main-box2-content-content">
-                        <div class="main-box3-1-content-number">
-                        1
-                        </div>
-                        <div class="main-box3-1-content-nickname">
-                        냐하하핳
-                        </div>
-
-                            <div class="main-box3-1-content-title">
-                            <a href="../../board/views/adminReadNT.jsp">
-                                요즘 근손실 너무 심한데 저 어떻하죠? ㅜㅜ
-                            </a>
-                            </div>
-                        <div class="main-box3-1-content-date">2023-08-22</div>
-                        <div class="main-box3-1-content-views">11만</div>
-                        <div class="main-box3-1-content-management"><button onclick="call_confirm2()"  class="management_b">
-                        글삭제
-                        </button></div>
-                    </div>
+					<c:choose>
+		                <c:when test = "${not empty fboardList}">
+							<c:forEach var="user" items="${fboardList}">
+							    <div class="main-box2-content-content">
+							        <div class="main-box3-1-content-number">${fboard.getFboardNumber()}</div>
+							        <div class="main-box3-1-content-nickname">${fboard.getUserNickname()}</div>
+							        <div class="main-box3-1-content-title"><a href="">${fboard.getFboardTitle()}</a></div>
+							        <div class="main-box3-1-content-date">${fboard.getFboardDate()}</div>
+                        			<div class="main-box3-1-content-management"><button onclick="call_confirm2()"  class="management_b">글삭제</button></div>
+							    </div>
+							</c:forEach>
+		                </c:when>
+		                
+			         	<c:otherwise>
+			          		<tr>
+			          			<td colspan = "5" align = "center"> &nbsp;&nbsp;&nbsp;&nbsp;등록된 게시물이 없습니다 </td>
+			          		</tr>
+		          		</c:otherwise>
+		         	</c:choose>
                 </div>
-
-                <div class="main-box3-1-title">
-                    <div class="main-box2-content-content">
-                        <div class="main-box3-1-content-number">
-                        2
-                        </div>
-                        <div class="main-box3-1-content-nickname">
-                        냐하하핳
-                        </div>
-                        <div class="main-box3-1-content-title">
-                        <a href="../../board/views/adminReadNT.jsp">
-                            헬린이 여자 근유통이 빡센데 원래 이런가요
-                        </a>
-                        </div>
-                        <div class="main-box3-1-content-date">2023-08-22</div>
-                        <div class="main-box3-1-content-views">5</div>
-                        <div class="main-box3-1-content-management"><button onclick="call_confirm2()"  class="management_b">
-                        글삭제
-                        </button></div>
-                    </div>
-                </div>
-
-                <div class="main-box3-1-title">
-                    <div class="main-box2-content-content">
-                        <div class="main-box3-1-content-number">
-                        3
-                        </div>
-                        <div class="main-box3-1-content-nickname">
-                        냐하하핳
-                        </div>
-                        <div class="main-box3-1-content-title">
-                        <a href="../../board/views/adminReadNT.jsp">
-                            오늘 가입 했어요 >_< 잘부탁드립니다
-                        </a>
-                        </div>
-                        <div class="main-box3-1-content-date">2023-08-21</div>
-                        <div class="main-box3-1-content-views">90만</div>
-                        <div class="main-box3-1-content-management"><button onclick="call_confirm2()"  class="management_b">
-                        글삭제
-                        </button></div>
-                    </div>
-                </div>
-                
-                <!-- 회원 게시글 끝 -->
-                </div>
+               <!-- 회원 게시글 끝 -->
             </div>
 
             <div class="main-box3">
@@ -187,6 +146,7 @@
             <div class="main-box4">
 
             </div>
+        </div>
         </div>
     </main>
     
