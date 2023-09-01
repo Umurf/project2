@@ -1,12 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>공지사항</title>
-    <link rel="stylesheet" href="../../css/notice.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/notice.css">
 </head>
 <body>
     <%@include file ="../../header.jsp" %>
@@ -19,87 +20,48 @@
                 <div class="main-box1-content">
                     <div class="main-box1-content-button">
                         <a href="./freeBoard.jsp">
-                            <img class="img1" src="../../img/002.png" alt="">
-                            <img class="img2" src="../../img/004.png" alt=""></a>
+                            <img class="img1" src="${pageContext.request.contextPath}/img/002.png" alt="">
+                            <img class="img2" src="${pageContext.request.contextPath}/img/004.png" alt=""></a>
                     </div>
                     <div class="main-box1-content-button">
                         <a href="./notice.jsp">
-                            <img class="img1" src="../../img/001.png" alt="">
-                            <img class="img2" src="../../img/005.png" alt=""></a>
+                            <img class="img1" src="${pageContext.request.contextPath}/img/001.png" alt="">
+                            <img class="img2" src="${pageContext.request.contextPath}/img/005.png" alt=""></a>
                     </div>
                 </div>
             </div>
             <div class="main-box2">
                 <div class="main-box2-titlebox">
-                    <div class="main-box2-title"><a href="./community.jsp">커뮤니티</a><div id="title2">&gt;</div><div id="title2">공지사항</div></div>
+                    <div class="main-box2-title"><a href="${pageContext.request.contextPath}/community.jsp">커뮤니티</a><div id="title2">&gt;</div><div id="title2">공지사항</div></div>
                 </div>
                 <div class="main-box2-content">
-                    <div class="main-box2-content-content" id="content-category">
-                        <div class="main-box2-content-title">글제목</div>
-                        <div class="main-box2-content-nickname">닉네임</div>
-                        <div class="main-box2-content-date">작성날짜</div>
-                        <div class="main-box2-content-count">조회수</div>
-                    </div>
-                    <div class="main-box2-content-content">
-                        <div class="main-box2-content-title"><a href="./readingNT.jsp">[공지사항]공지1</a></div>
-                        <div class="main-box2-content-nickname">관리자</div>
-                        <div class="main-box2-content-date">2023-08-22</div>
-                        <div class="main-box2-content-count">5</div>
-                    </div>
-                    <div class="main-box2-content-content">
-                        <div class="main-box2-content-title">[공지사항]공지2</div>
-                        <div class="main-box2-content-nickname">관리자</div>
-                        <div class="main-box2-content-date">2023-08-22</div>
-                        <div class="main-box2-content-count">5</div>
-                    </div>
-                    <div class="main-box2-content-content">
-                        <div class="main-box2-content-title">[공지사항]공지3</div>
-                        <div class="main-box2-content-nickname">관리자</div>
-                        <div class="main-box2-content-date">2023-08-22</div>
-                        <div class="main-box2-content-count">5</div>
-                    </div>
-                    <div class="main-box2-content-content">
-                        <div class="main-box2-content-title">[공지사항]공지4</div>
-                        <div class="main-box2-content-nickname">관리자</div>
-                        <div class="main-box2-content-date">2023-08-22</div>
-                        <div class="main-box2-content-count">5</div>
-                    </div>
-                    <div class="main-box2-content-content">
-                        <div class="main-box2-content-title">[공지사항]공지5</div>
-                        <div class="main-box2-content-nickname">관리자</div>
-                        <div class="main-box2-content-date">2023-08-22</div>
-                        <div class="main-box2-content-count">5</div>
-                    </div>
-                    <div class="main-box2-content-content">
-                        <div class="main-box2-content-title">[공지사항]공지6</div>
-                        <div class="main-box2-content-nickname">관리자</div>
-                        <div class="main-box2-content-date">2023-08-22</div>
-                        <div class="main-box2-content-count">5</div>
-                    </div>
-                    <div class="main-box2-content-content">
-                        <div class="main-box2-content-title">[공지사항]공지7</div>
-                        <div class="main-box2-content-nickname">관리자</div>
-                        <div class="main-box2-content-date">2023-08-22</div>
-                        <div class="main-box2-content-count">5</div>
-                    </div>
-                    <div class="main-box2-content-content">
-                        <div class="main-box2-content-title">[공지사항]공지8</div>
-                        <div class="main-box2-content-nickname">관리자</div>
-                        <div class="main-box2-content-date">2023-08-22</div>
-                        <div class="main-box2-content-count">5</div>
-                    </div>
-                    <div class="main-box2-content-content">
-                        <div class="main-box2-content-title">[공지사항]공지9</div>
-                        <div class="main-box2-content-nickname">관리자</div>
-                        <div class="main-box2-content-date">2023-08-22</div>
-                        <div class="main-box2-content-count">5</div>
-                    </div>
-                    <div class="main-box2-content-content" id="last_list">
-                        <div class="main-box2-content-title">[공지사항]공지10</div>
-                        <div class="main-box2-content-nickname">관리자</div>
-                        <div class="main-box2-content-date">2023-08-22</div>
-                        <div class="main-box2-content-count">5</div>
-                    </div>
+	                    <div class="main-box2-content-content1" id="content-category">
+	                        <div class="main-box2-content-title1">글제목</div>
+	                        <div class="main-box2-content-nickname1">닉네임</div>
+	                        <div class="main-box2-content-date1">작성날짜</div>
+	                        <div class="main-box2-content-count1">조회수</div>
+	                    </div>
+     	           <!-- ========== 게시글 목록 =========== -->
+                <c:choose>
+	                <c:when test = "${not empty noticeList}">
+						<c:forEach var="notice" items="${noticeList}">
+						    <div class="main-box2-content-content">
+						        <div class="main-box2-content-title"><a href="">${notice.getNoticeTitle()}</a></div>
+						        <div class="main-box2-content-nickname">${notice.getUserNickname()}</div>
+						        <div class="main-box2-content-date">${notice.getNoticeDate()}</div>
+						        <div class="main-box2-content-count">${notice.getNoticeCount()}</div>
+						    </div>
+						</c:forEach>
+	                </c:when>
+	                
+		         <c:otherwise>
+	          		<tr>
+	          			<td colspan = "5" align = "center" > 등록된 게시물이 없습니다 </td>
+	          		</tr>
+	          	</c:otherwise>
+	         </c:choose>
+     
+     
                 </div>
             </div>
             <div class="main-box3">
