@@ -11,7 +11,7 @@
 </head>
 <body>
 	
-	<jsp:include page="../../headeradmin.jsp"/>
+	<jsp:include page="../../header.jsp"/>
 
     <main>
         <div class="main-container">

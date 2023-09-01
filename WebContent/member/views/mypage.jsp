@@ -9,7 +9,7 @@
 <title>MYPAGE</title>
 </head>
 <body>
-<jsp:include page="../../headerMy.jsp"/>
+<jsp:include page="../../header.jsp"/>
 <main>
         <div class="main-container-outline"><!--메인 시작-->
             <div class="main-container">
