@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자유게시판</title>
+    <link rel="stylesheet" href="../../css/freeboardTest.css">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="header-box1">
+                <div class="logo"><a href="../../main/pro/main.html"><img src="../../img/logo.png" alt=""></a></div>
+                <div class="header-nav">
+                    <ul class="header-nav">
+                        <li>
+                            <a href="../../hmap/hmap.html">우리동네 헬스장</a>
+                        </li>
+                        <li>
+                            <a href="./community.html">커뮤니티</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="header-box2">
+                <ul class="header-box2">
+                    <li>
+                        <a href="../../member/pro/login.html">로그인</a>
+                    </li>
+                    <li>
+                        <a href="../../member/pro/join.html">회원가입</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="main-container">
+            <div class="main-box1">
+                <div class="main-box1-titlebox">
+                    <div class="main-box1-title">최근글목록</div>
+                </div>
+                <div class="main-box1-content">
+                    <div class="main-box1-content-button">
+                        <a href="./freeBoard.html">
+                            <img class="img1" src="../../img/002.png" alt="">
+                            <img class="img2" src="../../img/004.png" alt=""></a>
+                    </div>
+                    <div class="main-box1-content-button">
+                        <a href="./notice.html">
+                            <img class="img1" src="../../img/001.png" alt="">
+                            <img class="img2" src="../../img/005.png" alt=""></a>
+                    </div>
+                </div>
+            </div>
+
+                <div class="main-box2-titlebox">
+                    <div class="main-box2-title"><a href="./community.html">커뮤니티</a><div id="title2">&gt;</div><div id="title2">자유게시판</div></div>
+                
+                
+                    <table class="board-table">
+                        <thead>
+                          <tr>
+                            <th>번호</th>
+                            <th>제목</th>
+                            <th>작성자</th>
+                            <th>날짜</th>
+                            <th>조회수</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <!-- ========== 게시글 목록 예시 =========== -->
+                          <c:choose>
+                              <c:when test = "${not empty boardList}">
+                               <c:forEach var="board" items="${boardList}">
+                                   <tr>
+                                       <td><c:out value = "${board.getBoardNumber()}"/></td>
+                                       <td><c:out value = "${board.getBoardTitle()}"/></td>
+                                       <td><c:out value = "${board.getMemberId()}"/></td>
+                                       <td><c:out value = "${board.getBoardDate()}"/></td>
+                                       <td><c:out value = "${board.getBoardReadCount()}"/></td>
+                                   </tr>
+                            </c:forEach>
+                              </c:when>
+                              <c:otherwise>
+                                  <tr>
+                                      <td colspan = "5" align = "center" > 등록된 게시물이 없습니다 </td>
+                                  </tr>
+                              </c:otherwise>
+                          </c:choose>
+                          <!-- ========== /게시글 목록 예시 =========== -->
+                        </tbody>
+                      </table>
+
+            </div>
+            <div class="main-box3">
+                <div class="main-box3-pagesbox">
+                    <div class="main-box3-pages">
+                        <span><a href="#">&lt; 이전</a></span>
+                        <span><a href="#">1</a></span>
+                        <span><a href="#">2</a></span>
+                        <span><a href="#">3</a></span>
+                        <span><a href="#">다음 &gt;</a></span>
+                    </div>
+                </div>
+                <div class="main-box3-searchpart">
+                    <div class="main-box3-searchbox">
+                        <select name="search-target" id="">
+                            <option value="title">제목</option>
+                            <option value="writer">작성자</option>
+                            <option value="content">내용</option>
+                        </select>
+                        <input type="text">
+                        <button>검색</button>
+                    </div>
+                </div>
+            </div>
+            <div class="main-box4">
+                <button><a id="writing-button" href="./writing.html">글쓰기</a></button>
+            </div>
+
+
+
+
+    </main>
+    <footer>
+        <div class="footer-01">
+            <div class="footer-01-01">
+               <div>(주)오운완 | 대표자 : 노의진(팀장), 이지윤(부팀장), 김민규, 이동현, 유대훈</div>
+               <div>서울특별시 노원구 상계로 1길 34 5층 | 전화번호 : 02-933-5890</div>
+            </div>
+        </div>
+        <div class="footer-02">
+            <div class="footer-02-01">
+                <div>ⓒ2023 OWW All Rights Reserved</div>
+                <div>
+                    <a href="../../main/pro/privacy.html">개인정보처리방침</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

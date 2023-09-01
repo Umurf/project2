@@ -72,8 +72,8 @@ public class NoticeDTO {
 
 	@Override
 	public String toString() {
-		// TODO Auto-generated method stub
-		return super.toString();
+	      return noticeNumber + "," + noticeTitle + "," + noticeContent + "," 
+	              + noticeDate+ "," + noticeCount;
 	}
 	
 	

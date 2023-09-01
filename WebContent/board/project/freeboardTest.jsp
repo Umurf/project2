@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+    
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,7 +9,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>자유게시판</title>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/freeboard.css">
-    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 </head>
 <body>
     <%@include file ="../../header.jsp" %>
@@ -20,49 +20,55 @@
                 </div>
                 <div class="main-box1-content">
                     <div class="main-box1-content-button">
-                        <a href="./freeBoard.jsp">
+                        <a href="./freeBoard.html">
                             <img class="img1" src="${pageContext.request.contextPath}/img/002.png" alt="">
                             <img class="img2" src="${pageContext.request.contextPath}/img/004.png" alt=""></a>
                     </div>
                     <div class="main-box1-content-button">
-                        <a href="./notice.jsp">
+                        <a href="./notice.html">
                             <img class="img1" src="${pageContext.request.contextPath}/img/001.png" alt="">
                             <img class="img2" src="${pageContext.request.contextPath}/img/005.png" alt=""></a>
                     </div>
                 </div>
             </div>
-            <div class="main-box2">
+
                 <div class="main-box2-titlebox">
-                    <div class="main-box2-title"><a href="${pageContext.request.contextPath}/community.jsp">커뮤니티</a><div id="title2">&gt;</div><div id="title2">자유게시판</div></div>
-                </div>
-                	<div class="main-box2-content">
-	                    <div class="main-box2-content-content1" id="content-category">
-	                        <div class="main-box2-content-title1">글제목</div>
-	                        <div class="main-box2-content-nickname1">닉네임</div>
-	                        <div class="main-box2-content-date1">작성날짜</div>
-	                        <div class="main-box2-content-count1">조회수</div>
-	                    </div>
-	           <!-- ========== 게시글 목록 =========== -->
-                <c:choose>
-	                <c:when test = "${not empty fboardList}">
-						<c:forEach var="fboard" items="${fboardList}">
-						    <div class="main-box2-content-content">
-						        <div class="main-box2-content-title"><a href="">${fboard.getFboardTitle()}</a></div>
-						        <div class="main-box2-content-nickname">${fboard.getUserNickname()}</div>
-						        <div class="main-box2-content-date">${fboard.getFboardDate()}</div>
-						        <div class="main-box2-content-count">${fboard.getFboardCount()}</div>
-						    </div>
-						</c:forEach>
-	                </c:when>
-	                
-		         <c:otherwise>
-	          		<tr>
-	          			<td colspan = "5" align = "center" > 등록된 게시물이 없습니다 </td>
-	          		</tr>
-	          	</c:otherwise>
-	         </c:choose>
-	         <!-- ========== 게시글 목록 끝=========== -->
-                </div>
+                    <div class="main-box2-title"><a href="${pageContext.request.contextPath}/community.html">커뮤니티</a><div id="title2">&gt;</div><div id="title2">자유게시판</div></div>
+                
+                
+                    <table class="board-table">
+                        <thead>
+                          <tr>
+                            <th>제목</th>
+                            <th>작성자</th>
+                            <th>날짜</th>
+                            <th>조회수</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <!-- ========== 게시글 목록 예시 =========== -->
+                          <c:choose>
+                              <c:when test = "${not empty fboardList}">
+                               <c:forEach var="fboard" items="${fboardList}">
+                                   <tr>
+                                       <td><c:out value = "${fboard.getFboardNumber()}"/></td>
+                                       <td><c:out value = "${fboard.getFboardTitle()}"/></td>
+                                       <td><c:out value = "${fboard.getUserNickname()}"/></td>
+                                       <td><c:out value = "${fboard.getFboardDate()}"/></td>
+                                       <td><c:out value = "${fboard.getFboardCount()}"/></td>
+                                   </tr>
+                            </c:forEach>
+                              </c:when>
+                              <c:otherwise>
+                                  <tr>
+                                      <td colspan = "5" align = "center" > 등록된 게시물이 없습니다 </td>
+                                  </tr>
+                              </c:otherwise>
+                          </c:choose>
+                          <!-- ========== /게시글 목록 예시 =========== -->
+                        </tbody>
+                      </table>
+
             </div>
             <div class="main-box3">
                 <div class="main-box3-pagesbox">
@@ -86,10 +92,14 @@
                     </div>
                 </div>
             </div>
+            
+  
             <div class="main-box4">
                 <button><a id="writing-button" href="./writing.jsp">글쓰기</a></button>
             </div>
-        </div>
+
+
+
     </main>
     <%@include file ="../../footer.jsp" %>
 </body>
