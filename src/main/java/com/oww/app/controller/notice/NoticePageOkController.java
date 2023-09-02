@@ -47,7 +47,15 @@ public class NoticePageOkController implements Execute {
 		req.setAttribute("prev", prev);
 		req.setAttribute("next", next);
 //		+++++++++
+//		req.getRequestDispatcher("/board/project/notice.jsp").forward(req, resp);
+		
+		System.out.println("NoticeList 페이징 테스트");
+		
+		req.setAttribute("noticeList", noticeDAO.selectAll());
+		//이제 경로 설정 하면 끝
 		req.getRequestDispatcher("/board/project/notice.jsp").forward(req, resp);
+		
+		System.out.println("NoticeList 컨트롤러 테스트");
 		
 		return null;
 	}
