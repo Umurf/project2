@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>커뮤니티</title>
-    <link rel="stylesheet" href="../../css/community.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/community.css">
 </head>
 <body>
     <%@include file ="../../header.jsp" %>
@@ -19,13 +19,13 @@
                 <div class="main-box1-content">
                     <div class="main-box1-content-button">
                         <a href="./freeBoard.jsp">
-                            <img class="img1" src="../../img/002.png" alt="">
-                            <img class="img2" src="../../img/004.png" alt=""></a>
+                            <img class="img1" src="${pageContext.request.contextPath}/img/002.png" alt="">
+                            <img class="img2" src="${pageContext.request.contextPath}/img/004.png" alt=""></a>
                     </div>
                     <div class="main-box1-content-button">
                         <a href="./notice.jsp">
-                            <img class="img1" src="../../img/001.png" alt="">
-                            <img class="img2" src="../../img/005.png" alt=""></a>
+                            <img class="img1" src="${pageContext.request.contextPath}/img/001.png" alt="">
+                            <img class="img2" src="${pageContext.request.contextPath}/img/005.png" alt=""></a>
                     </div>
                 </div>
             </div>
@@ -46,60 +46,7 @@
                         <div class="main-box2-content-date">2023-08-22</div>
                         <div class="main-box2-content-count">155</div>
                     </div>
-                    <div class="main-box2-content-content" id="notice-content">
-                        <div class="main-box2-content-title">공지사항</div>
-                        <div class="main-box2-content-nickname">관리자</div>
-                        <div class="main-box2-content-date">2023-08-22</div>
-                        <div class="main-box2-content-count">5325</div>
-                    </div>
-                    <div class="main-box2-content-content" id="notice-content">
-                        <div class="main-box2-content-title">공지사항</div>
-                        <div class="main-box2-content-nickname">관리자</div>
-                        <div class="main-box2-content-date">2023-08-22</div>
-                        <div class="main-box2-content-count">7595</div>
-                    </div>
-                    <div class="main-box2-content-content">
-                        <div class="main-box2-content-title">헬린이 여자 근유통이 빡센데 원래 이런가요</div>
-                        <div class="main-box2-content-nickname">냐하하핳</div>
-                        <div class="main-box2-content-date">2023-08-22</div>
-                        <div class="main-box2-content-count">5</div>
-                    </div>
-                    <div class="main-box2-content-content">
-                        <div class="main-box2-content-title">헬린이 여자 근유통이 빡센데 원래 이런가요</div>
-                        <div class="main-box2-content-nickname">냐하하핳</div>
-                        <div class="main-box2-content-date">2023-08-22</div>
-                        <div class="main-box2-content-count">5</div>
-                    </div>
-                    <div class="main-box2-content-content">
-                        <div class="main-box2-content-title">헬린이 여자 근유통이 빡센데 원래 이런가요</div>
-                        <div class="main-box2-content-nickname">냐하하핳</div>
-                        <div class="main-box2-content-date">2023-08-22</div>
-                        <div class="main-box2-content-count">5</div>
-                    </div>
-                    <div class="main-box2-content-content">
-                        <div class="main-box2-content-title">헬린이 여자 근유통이 빡센데 원래 이런가요</div>
-                        <div class="main-box2-content-nickname">냐하하핳</div>
-                        <div class="main-box2-content-date">2023-08-22</div>
-                        <div class="main-box2-content-count">5</div>
-                    </div>
-                    <div class="main-box2-content-content">
-                        <div class="main-box2-content-title">헬린이 여자 근유통이 빡센데 원래 이런가요</div>
-                        <div class="main-box2-content-nickname">냐하하핳</div>
-                        <div class="main-box2-content-date">2023-08-22</div>
-                        <div class="main-box2-content-count">5</div>
-                    </div>
-                    <div class="main-box2-content-content">
-                        <div class="main-box2-content-title">헬린이 여자 근유통이 빡센데 원래 이런가요</div>
-                        <div class="main-box2-content-nickname">냐하하핳</div>
-                        <div class="main-box2-content-date">2023-08-22</div>
-                        <div class="main-box2-content-count">5</div>
-                    </div>
-                    <div class="main-box2-content-content" id="last_list">
-                        <div class="main-box2-content-title">헬린이 여자 근유통이 빡센데 원래 이런가요</div>
-                        <div class="main-box2-content-nickname">냐하하핳</div>
-                        <div class="main-box2-content-date">2023-08-22</div>
-                        <div class="main-box2-content-count">5</div>
-                    </div>
+
                 </div>
             </div>
             <div class="main-box3">

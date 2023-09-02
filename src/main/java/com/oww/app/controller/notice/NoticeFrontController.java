@@ -55,7 +55,14 @@ public class NoticeFrontController extends HttpServlet {
 		case "/project/noticePageOk.no":
 			result = new NoticePageOkController().execute(request, response);
 			break;	
-			
+		case "/board/views/noticeWrite.no":
+			System.out.println("=======");
+			result = new NoticeWriteController().execute(request, response);
+			break;
+		case "/board/views/noticeWriteOk.no":
+			System.out.println("noticeWriteOk-게시글 작성들어가기");
+			result = new NoticeWriteOkController().execute(request, response);
+			break;
 		}
 		
 	     
