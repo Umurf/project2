@@ -1,8 +1,7 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,12 +14,16 @@
     <main>
         <div class="main-container">
             <div class="main-box1-titlebox">
-                <div class="main-box1-title"><div id="title1"><a href="./community.jsp">커뮤니티</a></div><div id="title2">&gt;</div><div id="title2"><a href="./freeBoard.jsp">자유게시판</a></div></div>
+                <div class="main-box1-title">
+                    <div id="title1"><a href="./community.jsp">커뮤니티</a></div>
+                    <div id="title2">&gt;</div>
+                    <div id="title2"><a href="./freeBoard.jsp">자유게시판</a></div>
+                </div>
             </div>
             <div class="content-container">
                 <form class="content-form" 
                  id="fboardinsert" action="${pageContext.request.contextPath}/board/views/fboardWriteOk.fb" method="post">
-                    <div class="content-title" >제목
+                    <div class="content-title">제목
                     	<input type="text" name="fboardTitle">
                     </div>
                     <div class="content-nickname">닉네임
@@ -31,15 +34,12 @@
                     <div class="addfile">
                         <div class="addfile-text">
                             <div class="addfile-text1">첨부파일</div>
-                            <div class="addfile-text2">'png','gif','jpg','jpeg'파일만 업로드가 가능합니다.</div>
+                            <div class="addfile-text2">'png', 'gif', 'jpg', 'jpeg' 파일만 업로드 가능합니다.</div>
                         </div>
                     </div>
                     <div class="addfiles">
                         <div class="addfiles1">
-
-                            <input type="file" id="file" name="boardFile"
-								accept=".jpg, .jpeg, .png" multiple />
-
+                            <input type="file" id="file" name="boardFile" accept=".jpg, .jpeg, .png" multiple />
                         </div>
                     </div>
                     <!-- 취소 버튼 -->
@@ -52,11 +52,9 @@
                     <a id="button2" href="${pageContext.request.contextPath}/board/views/fboardWriteOk.fb">등록</a>
                     </button>
                     </div>
-                    
                 </form>
             </div>
         </div>
-        
     </main>
     <%@include file ="../../footer.jsp" %>
 </body>
