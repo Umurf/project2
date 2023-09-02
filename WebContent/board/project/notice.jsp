@@ -106,9 +106,9 @@
                 </div>
             </div>
             
-            <!-- <div class="main-box4">
-                <button><a id="writing-button" href="./adminWriting.html">글쓰기</a></button>
-            </div> -->
+             <div class="main-box4">
+                <button><a id="writing-button" href="../views/noticeWrite.no">글쓰기</a></button>
+            </div>
         </div>
     </main>
     <jsp:include page="../../footer.jsp"/>

@@ -6,6 +6,7 @@ import java.util.Map;
 import org.apache.ibatis.session.SqlSession;
 
 import com.mybatis.config.MyBatisConfig;
+import com.oww.app.dto.NoticeDTO;
 import com.oww.app.vo.NoticeVO;
 
 public class NoticeDAO {
@@ -25,5 +26,7 @@ public class NoticeDAO {
 	public int getTotalCount() {
 	    return sqlSession.selectOne("notice.getTotalCount");
 	}
-
+	public void insert(NoticeDTO noticeDTO) {
+		sqlSession.insert("notice.insert", noticeDTO);
+		}
 }
