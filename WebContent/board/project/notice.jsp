@@ -44,13 +44,15 @@
      	           <!-- ========== 게시글 목록 =========== -->
                 <c:choose>
 	                <c:when test = "${not empty noticeList}">
-						<c:forEach var="notice" items="${noticeList}">
-						    <div class="main-box2-content-content">
-						        <div class="main-box2-content-title"><a href="">${notice.getNoticeTitle()}</a></div>
-						        <div class="main-box2-content-nickname">${notice.getUserNickname()}</div>
-						        <div class="main-box2-content-date">${notice.getNoticeDate()}</div>
-						        <div class="main-box2-content-count">${notice.getNoticeCount()}</div>
-						    </div>
+						<c:forEach var="notice" items="${noticeList}" varStatus="loop">
+							<c:if test="${loop.index < rowCount}">
+							    <div class="main-box2-content-content">
+							        <div class="main-box2-content-title"><a href="">${notice.getNoticeTitle()}</a></div>
+							        <div class="main-box2-content-nickname">${notice.getUserNickname()}</div>
+							        <div class="main-box2-content-date">${notice.getNoticeDate()}</div>
+							        <div class="main-box2-content-count">${notice.getNoticeCount()}</div>
+							    </div>
+						    </c:if>
 						</c:forEach>
 	                </c:when>
 	                
@@ -66,28 +68,30 @@
             </div>
             <div class="main-box3">
             <!-- ========== 페이징처리 =========== -->
-            <div class="main-box3-pagesbox">
+         
+			<div class="main-box3-pagesbox">
 			    <div class="main-box3-pages">
-			        <ul>
+			        <ul class="notice-ul">
 			            <c:if test="${startPage > 1}">
-			                <li><a href="?page=1" class="prev">&lt;</a></li>
+			                <li class="notice-li"><a href="?page=1&rowCount=${rowCount}" class="prev">&lt;</a></li>
 			            </c:if>
 			            <c:forEach var="pageNum" begin="${startPage}" end="${endPage}">
 			                <c:choose>
 			                    <c:when test="${page eq pageNum}">
-			                        <li><span>${pageNum}</span></li>
+			                        <li class="notice-li"><span>${pageNum}</span></li>
 			                    </c:when>
 			                    <c:otherwise>
-			                        <li><a href="?page=${pageNum}">${pageNum}</a></li>
+			                        <li class="notice-li"><a href="?page=${pageNum}&rowCount=${rowCount}">${pageNum}</a></li>
 			                    </c:otherwise>
 			                </c:choose>
 			            </c:forEach>
 			            <c:if test="${next}">
-			                <li><a href="?page=${endPage + 1}" class="next">&gt;</a></li>
+			                <li class="notice-li"><a href="?page=${endPage + 1}&rowCount=${rowCount}" class="next">&gt;</a></li>
 			            </c:if>
 			        </ul>
 			    </div>
 			</div>
+
              <!-- ========== 페이징처리 끝=========== -->
                 <div class="main-box3-searchpart">
                     <div class="main-box3-searchbox">
@@ -107,6 +111,6 @@
             </div>
         </div>
     </main>
-    <%@include file ="../../footer.jsp" %>
+    <jsp:include page="../../footer.jsp"/>
 </body>
 </html>

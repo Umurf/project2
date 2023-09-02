@@ -7,6 +7,7 @@ import org.apache.ibatis.session.SqlSession;
 import com.mybatis.config.MyBatisConfig;
 import com.oww.app.dto.UserDTO;
 import com.oww.app.vo.SearchVO;
+import com.oww.app.vo.UserVO;
 
 public class UserDAO {
 	
@@ -31,16 +32,23 @@ public class UserDAO {
 			return (Integer)sqlSession.selectOne("user.checkNickname", userNickname) <= 0;
 	}
 		
-		public List<UserDTO> searchByEmail(SearchVO searchVO) {
-			return sqlSession.selectList("user.searchByEmail", searchVO);
-		}
-		
-		public List<UserDTO> searchByNickname(SearchVO searchVO) {
-			return sqlSession.selectList("user.searchByNickname", searchVO);
-		}
-		public String getUserNickname(int userNumber) {
-			return sqlSession.selectOne("user.getUserNickname", userNumber);
-		}
+	public List<UserDTO> searchByEmail(SearchVO searchVO) {
+		return sqlSession.selectList("user.searchByEmail", searchVO);
+	}
+	
+	public List<UserDTO> searchByNickname(SearchVO searchVO) {
+		return sqlSession.selectList("user.searchByNickname", searchVO);
+	}
+	public String getUserNickname(int userNumber) {
+		return sqlSession.selectOne("user.getUserNickname", userNumber);
+	}
+	public List<UserVO> lookByEmail(SearchVO searchVO) {
+		return sqlSession.selectList("user.lookByEmail", searchVO);
+	}
+	
+	public List<UserVO> lookByNickname(SearchVO searchVO) {
+		return sqlSession.selectList("user.lookByNickname", searchVO);
+	}
 }
 
 

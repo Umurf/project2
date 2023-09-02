@@ -20,7 +20,7 @@
 		from tbl_user u join tbl_notice n
 		on u.user_number = n.notice_number
 		order by notice_number desc
-		limit #{startRow}, #{rowCount}
+		limit #{startRow}, 10
 	</select>
 	
 	<select id="getTotalCount" resultType="int">
