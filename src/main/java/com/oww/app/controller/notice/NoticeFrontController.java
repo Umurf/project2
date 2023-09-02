@@ -52,10 +52,14 @@ public class NoticeFrontController extends HttpServlet {
 			result = new NoticeListOkController().execute(request, response);
 			break;
 			
+<<<<<<< HEAD
 //		case "/project/noticePageOk.no":
 //			result = new NoticePageOkController().execute(request, response);
 //			break;	
 			
+=======
+<<<<<<< HEAD
+>>>>>>> work/jsp
 		case "/project/noticePageOk.no":
 			result = new NoticePageOkController().execute(request, response);
 			break;	
@@ -67,6 +71,9 @@ public class NoticeFrontController extends HttpServlet {
 			System.out.println("noticeWriteOk-게시글 작성들어가기");
 			result = new NoticeWriteOkController().execute(request, response);
 			break;
+//		case "/project/noticePageOk.no":
+//			result = new NoticePageOkController().execute(request, response);
+//			break;	
 		}
 		
 	      return result;
