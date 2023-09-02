@@ -109,6 +109,10 @@ public class OwwFrontController extends HttpServlet {
 					System.out.println("관리자 페이지");
 					result = new AdminController().execute(request, response);
 					break;
+				case "/project/adminb.me":
+					System.out.println("관리자 게시글 페이지");
+					result = new AdminBoardController().execute(request, response);
+					break;
 		      }
 
 		      

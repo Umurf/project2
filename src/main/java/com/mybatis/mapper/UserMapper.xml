@@ -44,6 +44,22 @@
 		select user_nickname from tbl_user where user_number = #{userNumber}
 	</select>
 	
+		<!-- 회원 글관리 페이지 -->
+	<select id="lookbyEmail" parameterType="SearchVO" resultType ="UserVO"> 
+		select u.user_number, u.user_nickname, u.user_email, 
+		f.fboard_number, f.fboard_title, f.fboard_content, f.fboard_date, f.fboard_count
+		from tbl_user u join tbl_fboard f 
+		on u.user_number = f.user_number
+		where user_email like concat('%', #{keyword}, '%')	
+	</select> 
+	<select id="lookbyNickname" parameterType="SearchVO" resultType ="UserVO">
+		select u.user_number, u.user_nickname, u.user_email, 
+		f.fboard_number, f.fboard_title, f.fboard_content, f.fboard_date, f.fboard_count
+		from tbl_user u join tbl_fboard f 
+		on u.user_number = f.user_number
+		where user_nickname like concat('%', #{keyword}, '%')	
+	</select>
+	
 </mapper>
 
 
