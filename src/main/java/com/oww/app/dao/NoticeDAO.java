@@ -19,6 +19,11 @@ public class NoticeDAO {
 		return sqlSession.selectList("notice.selectAll");
 	}
 	public List<NoticeVO> selectPage(Map<String, Integer> pageMap) {
-		return sqlSession.selectList("board.selectPage", pageMap);
+		return sqlSession.selectList("notice.selectPage", pageMap);
 	}
+	
+	public int getTotalCount() {
+	    return sqlSession.selectOne("notice.getTotalCount");
+	}
+
 }
