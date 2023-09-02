@@ -16,11 +16,11 @@
 		on u.user_number = f.user_number 
 	</select>
 	
-	<!-- 테이블에 데이터 삽입 -->
-
+	<!-- 자우게시판 게시글 데이터 삽입 -->
 	<insert id="insert" parameterType="FboardDTO">
 		INSERT INTO tbl_fboard 
 		(user_number, fboard_title, fboard_date, fboard_content, fboard_count) 
 		VALUES (#{userNumber},#{fboardTitle},#{fboardDate},#{fboardContent},#{fboardCount});
 	</insert>
+	
 </mapper>
