@@ -4,7 +4,14 @@
   font-weight: normal;
   font-style: normal;
 }
-
+ul {
+	list-style: none;
+	display : flex;
+}
+li{
+	list-style: none;
+	margin: 0 5px;
+}
 a {
   color: inherit;
   text-decoration: none;
@@ -296,7 +303,17 @@ display: block;
   color: white;
   margin: 0 10px;
 }
+/*페이징 처리*/
+.prev::before {
+    content: '\003c'; /* '<' 문자의 유니코드 */
+    /* 기타 스타일 속성 */
+}
 
+.next::before {
+    content: '\003e'; /* '>' 문자의 유니코드 */
+    /* 기타 스타일 속성 */
+}
+/*페이징 처리 끝*/
 #writing-button{
   color: white;
 }

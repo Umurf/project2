@@ -49,9 +49,13 @@ public class NoticeFrontController extends HttpServlet {
 		
 		switch(target) {
 		case "/project/noticeListOk.no":
-			System.out.println("=======");
 			result = new NoticeListOkController().execute(request, response);
 			break;
+			
+		case "/project/noticePageOk.no":
+			result = new NoticePageOkController().execute(request, response);
+			break;	
+			
 		}
 		
 	     

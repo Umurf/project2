@@ -65,15 +65,30 @@
                 </div>
             </div>
             <div class="main-box3">
-                <div class="main-box3-pagesbox">
-                    <div class="main-box3-pages">
-                        <span><a href="#">&lt; 이전</a></span>
-                        <span><a href="#">1</a></span>
-                        <span><a href="#">2</a></span>
-                        <span><a href="#">3</a></span>
-                        <span><a href="#">다음 &gt;</a></span>
-                    </div>
-                </div>
+            <!-- ========== 페이징처리 =========== -->
+            <div class="main-box3-pagesbox">
+			    <div class="main-box3-pages">
+			        <ul>
+			            <c:if test="${startPage > 1}">
+			                <li><a href="?page=1" class="prev">&lt;</a></li>
+			            </c:if>
+			            <c:forEach var="pageNum" begin="${startPage}" end="${endPage}">
+			                <c:choose>
+			                    <c:when test="${page eq pageNum}">
+			                        <li><span>${pageNum}</span></li>
+			                    </c:when>
+			                    <c:otherwise>
+			                        <li><a href="?page=${pageNum}">${pageNum}</a></li>
+			                    </c:otherwise>
+			                </c:choose>
+			            </c:forEach>
+			            <c:if test="${next}">
+			                <li><a href="?page=${endPage + 1}" class="next">&gt;</a></li>
+			            </c:if>
+			        </ul>
+			    </div>
+			</div>
+             <!-- ========== 페이징처리 끝=========== -->
                 <div class="main-box3-searchpart">
                     <div class="main-box3-searchbox">
                         <select name="search-target" id="">
@@ -86,6 +101,7 @@
                     </div>
                 </div>
             </div>
+            
             <!-- <div class="main-box4">
                 <button><a id="writing-button" href="./adminWriting.html">글쓰기</a></button>
             </div> -->

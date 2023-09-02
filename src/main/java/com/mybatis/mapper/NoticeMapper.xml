@@ -15,12 +15,15 @@
 		from tbl_user u join tbl_notice n 
 		on u.user_number = n.user_number 
 	</select>
-	
-	<select id="selectPage" resultType="FboardVO" parameterType="map">
-		select m.member_number, m.member_id, b.board_number , b.board_title , b.board_content , b.board_date , b.board_read_count
-		from tbl_member m join tbl_board b
-		on m.member_number = b.member_number
-		order by board_number desc
+	<select id="selectPage" resultType="NoticeVO" parameterType="map">
+		select u.user_number, u.user_Email, n.notice_number , n.notice_title , n.notice_content , n.notice_date , n.notice_count
+		from tbl_user u join tbl_notice n
+		on u.user_number = n.notice_number
+		order by notice_number desc
 		limit #{startRow}, #{rowCount}
+	</select>
+	
+	<select id="getTotalCount" resultType="int">
+    	SELECT COUNT(*) FROM tbl_notice
 	</select>
 </mapper>
