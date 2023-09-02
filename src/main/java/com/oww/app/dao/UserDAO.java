@@ -38,6 +38,9 @@ public class UserDAO {
 		public List<UserDTO> searchByNickname(SearchVO searchVO) {
 			return sqlSession.selectList("user.searchByNickname", searchVO);
 		}
+		public String getUserNickname(int userNumber) {
+			return sqlSession.selectOne("user.getUserNickname", userNumber);
+		}
 }
 
 

@@ -6,11 +6,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>내 글 보기</title>
-    <link rel="stylesheet" href="../../css/readingMy.css">
-    <script defer src="../../js/readingMy.js"></script>
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/readingMy.css">
+    <script defer src="${pageContext.request.contextPath}/js/readingMy.js"></script>
 </head>
 <body>
-    <%@include file ="../../headerMy.jsp" %>
+    <%@include file ="../../header.jsp" %>
     <main>
         <div class="main-container">
             <div class="main-box1">

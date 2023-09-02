@@ -12,7 +12,7 @@
 </head>
 <body>
     <%@include file ="../../header.jsp" %>
-    <main>
+    <main class="writer">
         <div class="main-container">
             <div class="main-box1">
                 <div class="main-box1-titlebox">
@@ -87,7 +87,12 @@
                 </div>
             </div>
             <div class="main-box4">
-                <button><a id="writing-button" href="./writing.jsp">글쓰기</a></button>
+                <button>
+               <!--  <a id="writing-button" href="/views/fboardwrite.fb"> -->
+                <a id="writing-button" href="../views/writing.fb">
+                글쓰기
+                </a>
+                </button>
             </div>
         </div>
     </main>

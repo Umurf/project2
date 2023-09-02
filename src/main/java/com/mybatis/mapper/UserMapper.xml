@@ -38,6 +38,11 @@
 		FROM tbl_user
 		where user_nickname like concat('%', #{keyword}, '%')
 	</select>
+	
+		<!-- 글쓰기 쿼리-->
+	<select id="getUserNickname" parameterType="_int" resultType="string">
+		select user_nickname from tbl_user where user_number = #{userNumber}
+	</select>
 </mapper>
 
 
