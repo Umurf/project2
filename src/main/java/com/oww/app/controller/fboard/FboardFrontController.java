@@ -55,6 +55,10 @@ public class FboardFrontController extends HttpServlet {
 			System.out.println("fboardWrite 완료");
 			result = new FboardWriteController().execute(request, response);
 			break;
+		case "/board/views/fboardWriteOk.fb":
+			System.out.println("fboardWriteOk 완료");
+			result = new FboardWriteOkController().execute(request, response);
+			break;
 		}
 		
 	     

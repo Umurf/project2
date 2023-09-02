@@ -18,13 +18,16 @@
                 <div class="main-box1-title"><div id="title1"><a href="./community.jsp">커뮤니티</a></div><div id="title2">&gt;</div><div id="title2"><a href="./freeBoard.jsp">자유게시판</a></div></div>
             </div>
             <div class="content-container">
-                <form class="content-form"
-                 id="write-form" action="#" method="post" enctype="multipart/form-data">
-                    <div class="content-title" >제목 <input type="text" name="fboardTitle"></div>
-                    <div class="content-nickname">닉네임
-                    <input class="writer-nickname" value="<c:out value="${userNickname}"/>" readonly>
+                <form class="content-form" 
+                 id="fboardinsert" action="${pageContext.request.contextPath}/board/views/fboardWriteOk.fb" method="post">
+                    <div class="content-title" >제목
+                    	<input type="text" name="fboardTitle">
                     </div>
-                    <div class="content-content">내용 <textarea name="fboardContent" id="writing-area"></textarea></div>
+                    <div class="content-nickname">닉네임
+                    	<input class="writer-nickname" readonly value="${userNickname}">
+                    </div>
+                    <div class="content-content">내용<textarea name="fboardContent" id="writing-area"></textarea>
+                    </div>
                     <div class="addfile">
                         <div class="addfile-text">
                             <div class="addfile-text1">첨부파일</div>
@@ -42,19 +45,18 @@
                     <!-- 취소 버튼 -->
                     <div class="buttons">
                     <button id="button1" onclick="call_confirm1()">
-                    <a id="button1" href="${pageContext.request.contextPath}/project/fboardListOk.fb">취소
-                    </a>
+                    <a id="button1" href="${pageContext.request.contextPath}/board/project/freeBoard.jsp">취소</a>
                     </button>
                     <!-- 등록 버튼 -->
                     <button class="button2" onclick="call_confirm2()">
-                    <a id="button2" href="${pageContext.request.contextPath}/project/fboardListOk.fb">등록
-                    </a>
+                    <a id="button2" href="${pageContext.request.contextPath}/board/views/fboardWriteOk.fb">등록</a>
                     </button>
                     </div>
-                    </div>
+                    
                 </form>
             </div>
         </div>
+        
     </main>
     <%@include file ="../../footer.jsp" %>
 </body>
