@@ -43,6 +43,7 @@
 	<select id="getUserNickname" parameterType="_int" resultType="string">
 		select user_nickname from tbl_user where user_number = #{userNumber}
 	</select>
+	
 </mapper>
 
 

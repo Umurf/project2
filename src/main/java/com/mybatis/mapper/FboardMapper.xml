@@ -15,4 +15,12 @@
 		from tbl_user u join tbl_fboard  f 
 		on u.user_number = f.user_number 
 	</select>
+	
+	<!-- 테이블에 데이터 삽입 -->
+
+	<insert id="insert" parameterType="FboardDTO">
+		INSERT INTO tbl_fboard 
+		(user_number, fboard_title, fboard_date, fboard_content, fboard_count) 
+		VALUES (#{userNumber},#{fboardTitle},#{fboardDate},#{fboardContent},#{fboardCount});
+	</insert>
 </mapper>
