@@ -1,12 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>작성된 글 보기(자유)</title>
-    <link rel="stylesheet" href="../../css/readingFB.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/readingFB.css">
     <script defer src="../../js/readingFB.js"></script>
 </head>
 <body>
@@ -37,24 +38,31 @@
             <div class="main-box3">
                     <div class="total-comments-box">
                         <span class="comments-text">댓글</span>
-                        <span class="total-comments-text">1</span>
+                       <!--   <span class="total-comments-text"></span>-->
                     </div>
-                    <div class="comments-box">
-                    <div class="comments-info-box">
-                        <div class="name-n-date">
-                            <div class="writer-name">작성자</div>
-                            <div class="written-date">2023-08-18 15:30:13</div>
-                        </div>
-                        <div class="comments-content-box">
-                            <div class="comments-content">
-                                댓글내용
-                            </div>
-                        </div>
-                        <!-- <div class="comments-buttons">
-                            <button>수정</button>
-                            <button>삭제</button>
-                        </div> -->
-                    </div>
+                    <c:choose>
+            			<c:when test = "${not empty commentList}">
+            				<c:forEach var="comment" items="${commentList}">
+                    			<div class="comments-box">
+                    				<div class="comments-info-box">
+                        				<div class="name-n-date">
+                            				<div class="writer-name"><c:out value="${comment.getUserNickname()}"/></div>
+                            				<div class="written-date"><c:out value="${comment.getCommentDate()}"/></div>
+                        				</div>
+                        			<div class="comments-content-box">
+                            			<div class="comments-content">
+                                			<c:out value="${comment.getCommentContent()}"/>
+                            			</div>
+                        			</div>
+			                    <!--<div class="comments-buttons">
+			                            <button>수정</button>
+			                            <button>삭제</button>
+			                        </div> -->
+                        			</div>
+                    			</div>
+                    		</c:forEach>
+                    	</c:when>
+                    </c:choose>	
                 </div>
                 <div class="write-commentsbox">
                     <div class="comment-writer">

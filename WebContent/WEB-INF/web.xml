@@ -39,5 +39,12 @@
 		<servlet-name>Notice</servlet-name>
 		<url-pattern>*.no</url-pattern>
 	</servlet-mapping>
-
+	<servlet>
+		<servlet-name>Comment</servlet-name>
+		<servlet-class>com.oww.app.controller.comment.CommentFrontController</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Comment</servlet-name>
+		<url-pattern>*.co</url-pattern>
+	</servlet-mapping>
 </web-app>
