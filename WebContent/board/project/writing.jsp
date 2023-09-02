@@ -1,26 +1,30 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>글 작성</title>
-    <link rel="stylesheet" href="../../css/writing.css">
-    <script defer src="../../js/writing.js"></script>
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/writing.css">
+    <script defer src="${pageContext.request.contextPath}/js/writing.js"></script>
 </head>
 <body>
-    <%@include file ="../../headerMy.jsp" %>
+    <%@include file ="../../header.jsp" %>
     <main>
         <div class="main-container">
             <div class="main-box1-titlebox">
                 <div class="main-box1-title"><div id="title1"><a href="./community.jsp">커뮤니티</a></div><div id="title2">&gt;</div><div id="title2"><a href="./freeBoard.jsp">자유게시판</a></div></div>
             </div>
             <div class="content-container">
-                <form class="content-form" action="">
-                    <div class="content-title">제목 <input type="text"></div>
-                    <div class="content-nickname">닉네임 <input class="writer-nickname" value="작성자닉네임고정" readonly></div>
-                    <div class="content-content">내용 <textarea name="" id="writing-area"></textarea></div>
+                <form class="content-form"
+                 id="write-form" action="#" method="post" enctype="multipart/form-data">
+                    <div class="content-title" >제목 <input type="text" name="fboardTitle"></div>
+                    <div class="content-nickname">닉네임
+                    <input class="writer-nickname" value="<c:out value="${userNickname}"/>" readonly>
+                    </div>
+                    <div class="content-content">내용 <textarea name="fboardContent" id="writing-area"></textarea></div>
                     <div class="addfile">
                         <div class="addfile-text">
                             <div class="addfile-text1">첨부파일</div>
@@ -29,12 +33,25 @@
                     </div>
                     <div class="addfiles">
                         <div class="addfiles1">
-                        <form action="">
-                            <input type="file">
-                        </form>
+
+                            <input type="file" id="file" name="boardFile"
+								accept=".jpg, .jpeg, .png" multiple />
+
                         </div>
                     </div>
-                    <div class="buttons"><button id="button1" onclick="call_confirm1()"><a id="button1" href="./freeBoard.jsp">취소</a></button><button class="button2" onclick="call_confirm2()"><a id="button2" href="../views/readingMy.jsp">등록</a></button></div>
+                    <!-- 취소 버튼 -->
+                    <div class="buttons">
+                    <button id="button1" onclick="call_confirm1()">
+                    <a id="button1" href="${pageContext.request.contextPath}/project/fboardListOk.fb">취소
+                    </a>
+                    </button>
+                    <!-- 등록 버튼 -->
+                    <button class="button2" onclick="call_confirm2()">
+                    <a id="button2" href="${pageContext.request.contextPath}/project/fboardListOk.fb">등록
+                    </a>
+                    </button>
+                    </div>
+                    </div>
                 </form>
             </div>
         </div>

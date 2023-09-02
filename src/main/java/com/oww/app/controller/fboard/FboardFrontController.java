@@ -51,6 +51,10 @@ public class FboardFrontController extends HttpServlet {
 			System.out.println("=======");
 			result = new FboardListOkController().execute(request, response);
 			break;
+		case "/board/views/writing.fb":
+			System.out.println("fboardWrite 완료");
+			result = new FboardWriteController().execute(request, response);
+			break;
 		}
 		
 	     
