@@ -36,7 +36,7 @@ public class FboardWriteOkController implements Execute {
         
         fboardDTO.setFboardContent(request.getParameter("fboardContent"));
         fboardDTO.setUserNumber((Integer) request.getSession().getAttribute("userNumber"));
-//        fboardDTO.setFboardCount((Integer) request.getSession().getAttribute("fboardCount"));
+//      fboardDTO.setFboardCount((Integer) request.getSession().getAttribute("fboardCount"));
         fboardDTO.setFboardCount(1);
         fboardDTO.setFboardDate(currentTime);
         
