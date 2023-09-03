@@ -1,7 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="${pagetContext.request.contextPath}/assets/js/boardRead.js"></script>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,27 +19,16 @@
                     <div class="main-box1-title"><div id="title1"><a href="../pro/community.jsp">커뮤니티</a></div><div id="title2">&gt;</div><div id="title2"><a href="../pro/freeBoard.jsp">자유게시판</a></div></div>
                 </div>
                 
-                <c:choose>
-                    <c:when test="${not empty fboard}">
-                        <c:forEach var="fboardItem" items="${fboard}">
                             <div class="writing-title-box">
-                                <div class="writing-title">${fboardItem.getFboardTitle()}</div>
+                                <div class="writing-title" >${fboard.getFboardTitle()}</div>
                             </div>
                             <div class="main-box1-infobox">
-                                <div class="writer">${fboardItem.getUserNickname()}</div>
-                                <div class="date">${fboardItem.getFboardDate()}</div>
+                                <div class="writer">${fboard.getUserNickname()}</div>
+                                <div class="date">${fboard.getFboardDate()}</div>
                             </div>
                             <div class="main-box1-contentbox">
-                                <div class="main-box1-content">${fboardItem.getFboardContent()}</div>
+                                <div class="main-box1-content">${fboard.getFboardContent()}</div>
                             </div>
-                        </c:forEach>
-                    </c:when>
-	         
-	         	<c:otherwise>
-
-	          	</c:otherwise>
-	         
-            </c:choose>
                 
                 
             </div> 
