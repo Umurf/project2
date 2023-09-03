@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="fupload"> <!-- 회원 정보가 들어가는 공간 -->
-
+	<!-- 첨부 파일 삭제 쿼리 -->
+	<delete id="delete" parameterType="_int">
+	delete from tbl_fupload
+	where fboard_number = #{fboardNumber}
+	</delete>
 </mapper>

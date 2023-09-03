@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="${pagetContext.request.contextPath}/assets/js/boardRead.js"></script>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,22 +19,41 @@
                 <div class="main-box1-titlebox">
                     <div class="main-box1-title"><div id="title1"><a href="../pro/community.jsp">커뮤니티</a></div><div id="title2">&gt;</div><div id="title2"><a href="../pro/freeBoard.jsp">자유게시판</a></div></div>
                 </div>
-                <div class="writing-title-box">
-                    <div class="writing-title">글제목</div>
-                </div>
-                <div class="main-box1-infobox">
-                    <div class="writer">작성자</div>
-                    <div class="date">2023-08-18</div>
-                </div>
-                <div class="main-box1-contentbox">
-                    <div class="main-box1-content">글내용</div>
-                </div>
+                
+                <c:choose>
+                    <c:when test="${not empty fboard}">
+                        <c:forEach var="fboardItem" items="${fboard}">
+                            <div class="writing-title-box">
+                                <div class="writing-title">${fboardItem.getFboardTitle()}</div>
+                            </div>
+                            <div class="main-box1-infobox">
+                                <div class="writer">${fboardItem.getUserNickname()}</div>
+                                <div class="date">${fboardItem.getFboardDate()}</div>
+                            </div>
+                            <div class="main-box1-contentbox">
+                                <div class="main-box1-content">${fboardItem.getFboardContent()}</div>
+                            </div>
+                        </c:forEach>
+                    </c:when>
+	         
+	         	<c:otherwise>
+
+	          	</c:otherwise>
+	         
+            </c:choose>
+                
+                
             </div> 
             <div class="main-box2">
                 <div class="main-box2-list-button">
-                    <button id="listbutton1"><a id="" href="../pro/freeBoard.jsp">목록</a></button>
-                    <button id="listbutton2"><a id="" href="../views/rewriting.jsp">수정</a></button>
-                    <button id="listbutton3"  onclick="call_confirm1()"><a id="" href="../pro/freeBoard.jsp">삭제</a></button>
+                    <button id="listbutton1" type="button" class="list-btn" data-boardnumber="${board.getFboardNumber()}">
+                    <a id="" href="${pageContext.request.contextPath}/project/fboardListOk.fb">목록</a></button>
+                    	<%-- <c:if test="${sessionScope.userNumber == fboard.getUserNumber()}"></c:if> --%>
+                    <button id="listbutton2">
+                    	<a id="" href="../views/rewriting.jsp">수정</a></button>
+                    <button id="listbutton3"  onclick="call_confirm1()">
+                   	 <a id="" href="../pro/freeBoard.jsp">삭제</a></button>
+                   	 
                 </div>
             </div>
             <div class="main-box3">
