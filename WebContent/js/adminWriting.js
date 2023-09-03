@@ -1,4 +1,3 @@
-
         function call_confirm1(){
             if(confirm("글 작성을 취소하시겠습니까?")){
                 alert("글 작성이 취소되었습니다.");
@@ -6,11 +5,18 @@
 
             }
         }
-        function call_confirm2(){
+        function call_confirm2(event){
+         console.log('hello');
+         console.log(event);
+      
+         
+         event.preventDefault();
+         let form = document.getElementById("noticeinsert");
+         console.log(form);
             if(confirm("글을 등록하시겠습니까?")){
                 alert("글이 등록되었습니다.");
+                form.submit();
             }else{
                 
             }
         }
-   

@@ -18,8 +18,8 @@ public class FboardDAO {
 	public List<FboardVO> selectAll(){
 		return sqlSession.selectList("fboard.selectAll");
 	}
-    public FboardVO selectAll2() {
-        return sqlSession.selectOne("fboard.selectAll2");
+    public FboardVO selectAll2(int fboardNumber) {
+        return sqlSession.selectOne("fboard.selectAll2",fboardNumber);
     }
 	public void insert(FboardDTO fboardDTO) {
 		sqlSession.insert("fboard.insert", fboardDTO);

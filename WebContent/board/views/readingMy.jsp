@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <!DOCTYPE html>
 <html lang="en">
@@ -11,45 +10,44 @@
     <script defer src="${pageContext.request.contextPath}/js/readingMy.js"></script>
 </head>
 <body>
-    <%@include file ="../../header.jsp" %>
+    <%@include file="../../header.jsp" %>
     <main>
         <div class="main-container">
             <div class="main-box1">
                 <div class="main-box1-titlebox">
-                    <div class="main-box1-title"><div id="title1"><a href="../pro/community.jsp">커뮤니티</a></div><div id="title2">&gt;</div><div id="title2"><a href="../pro/freeBoard.jsp">자유게시판</a></div></div>
+                    <div class="main-box1-title">
+                        <div id="title1"><a href="../pro/community.jsp">커뮤니티</a></div>
+                        <div id="title2">&gt;</div>
+                        <div id="title2"><a href="../pro/freeBoard.jsp">자유게시판</a></div>
+                    </div>
                 </div>
-                
-                            <div class="writing-title-box">
-                                <div class="writing-title" >${fboard.getFboardTitle()}</div>
-                            </div>
-                            <div class="main-box1-infobox">
-                                <div class="writer">${fboard.getUserNickname()}</div>
-                                <div class="date">${fboard.getFboardDate()}</div>
-                            </div>
-                            <div class="main-box1-contentbox">
-                                <div class="main-box1-content">${fboard.getFboardContent()}</div>
-                            </div>
-                
-                
-            </div> 
+                <div class="writing-title-box">
+                    <div class="writing-title">${fboard.getFboardTitle()}</div>
+                </div>
+                <div class="main-box1-infobox">
+                    <div class="writer">${fboard.getUserNickname()}</div>
+                    <div class="date">${fboard.getFboardDate()}</div>
+                </div>
+                <div class="main-box1-contentbox">
+                    <div class="main-box1-content">${fboard.getFboardContent()}</div>
+                </div>
+            </div>
             <div class="main-box2">
                 <div class="main-box2-list-button">
-                    <button id="listbutton1" type="button" class="list-btn" data-boardnumber="${board.getFboardNumber()}">
-                    <a id="" href="${pageContext.request.contextPath}/project/fboardListOk.fb">목록</a></button>
-                    	<%-- <c:if test="${sessionScope.userNumber == fboard.getUserNumber()}"></c:if> --%>
+                    <button id="listbutton1" type="button" class="list-btn" data-boardnumber="${fboard.getFboardNumber()}">
+                        <a id="" href="${pageContext.request.contextPath}/project/fboardListOk.fb">목록</a></button>
                     <button id="listbutton2">
-                    	<a id="" href="../views/rewriting.jsp">수정</a></button>
-                    <button id="listbutton3"  onclick="call_confirm1()">
-                   	 <a id="" href="../pro/freeBoard.jsp">삭제</a></button>
-                   	 
+                        <a id="" href="../views/rewriting.jsp">수정</a></button>
+                    <button id="listbutton3" onclick="call_confirm1()">
+                        <a id="" href="../pro/freeBoard.jsp">삭제</a></button>
                 </div>
             </div>
             <div class="main-box3">
-                    <div class="total-comments-box">
-                        <span class="comments-text">댓글</span>
-                        <span class="total-comments-text">1</span>
-                    </div>
-                    <div class="comments-box">
+                <div class="total-comments-box">
+                    <span class="comments-text">댓글</span>
+                    <span class="total-comments-text">1</span>
+                </div>
+                <div class="comments-box">
                     <div class="comments-info-box">
                         <div class="name-n-date">
                             <div class="writer-name">작성자</div>
@@ -60,10 +58,6 @@
                                 댓글내용
                             </div>
                         </div>
-                        <!-- <div class="comments-buttons">
-                            <button>수정</button>
-                            <button>삭제</button>
-                        </div> -->
                     </div>
                 </div>
                 <div class="write-commentsbox">
@@ -75,19 +69,18 @@
                     </div>
                     <div class="commentbox">
                         <form action="" class="writing-comment">
-                           <textarea class="writing-comment-box" name="" id=""=></textarea>
+                           <textarea class="writing-comment-box" name="" id="commentbox"></textarea>
                             <div class="comment-button-box">
                                 <div class="comment-savebutton">
-                                    <button><a id="commentbutton" href="../views/readingMy.jsp"">댓글등록</a></button>
+                                    <button><a id="commentbutton" href="../views/readingMy.jsp">댓글등록</a></button>
                                 </div>
                             </div>
                         </form>
                     </div>
-                   
                 </div>
-            </div>   
+            </div>
         </div>
     </main>
-    <%@include file ="../../footer.jsp" %>
+    <%@include file="../../footer.jsp" %>
 </body>
 </html>
