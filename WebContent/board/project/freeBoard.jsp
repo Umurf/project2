@@ -47,7 +47,7 @@
 	                <c:when test = "${not empty fboardList}">
 						<c:forEach var="fboard" items="${fboardList}">
 						    <div class="main-box2-content-content">
-						        <div class="main-box2-content-title"><a href="">${fboard.getFboardTitle()}</a></div>
+						        <div class="main-box2-content-title"><a href="${pageContext.request.contextPath}/board/views/fboardReadOk.fb">${fboard.getFboardTitle()}</a></div>
 						        <div class="main-box2-content-nickname">${fboard.getUserNickname()}</div>
 						        <div class="main-box2-content-date">${fboard.getFboardDate()}</div>
 						        <div class="main-box2-content-count">${fboard.getFboardCount()}</div>

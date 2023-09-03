@@ -23,4 +23,24 @@
 		VALUES (#{userNumber},#{fboardTitle},#{fboardDate},#{fboardContent},#{fboardCount});
 	</insert>
 	
+	<delete id="delete" parameterType="_int">
+		delete from tbl_fboard where fboard_number = #{fboardNumber}
+	</delete>
+	
+	<!-- 자유게시판 게시글 수정 -->
+	<update id="update" parameterType="FboardDTO">
+		update tbl_fboard
+		set fboard_title = #{fboardTitle}, fboard_content = #{fboardContent}
+		where fboard_number = #{fboardNumber}
+	</update>
 </mapper>
+
+
+
+
+
+
+
+
+
+

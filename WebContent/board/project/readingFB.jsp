@@ -73,7 +73,7 @@
                     </div>
                     <div class="commentbox">
                         <form action="" class="writing-comment">
-                            <textarea class="writing-comment-box" name="" id=""=></textarea>
+                            <textarea class="writing-comment-box" name="" id=""></textarea>
                             <div class="comment-button-box">
                                 <div class="comment-savebutton">
                                     <button><a id="commentbutton" href="./readingFB.jsp">댓글등록</a></button>
