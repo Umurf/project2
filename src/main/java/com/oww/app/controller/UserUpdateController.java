@@ -20,15 +20,14 @@ public class UserUpdateController implements Execute{
 		UserDAO userDAO = new UserDAO();
 		UserDTO userDTO = new UserDTO();
 		HttpSession session= request.getSession();
+		int userNumber = (Integer)session.getAttribute("userNumber");
 		session.getAttribute("userEmail");
 		session.getAttribute("userNickname");
+//		session.getAttribute("userPassword");
 		
-//		userDTO.setUserEmail(request.getParameter("userEmail"));
-		userDTO.setUserNickname(request.getParameter("userNickname"));
-		userDTO.setUserPassword(request.getParameter("newPassword"));
 		System.out.println(userDTO.toString());
 		
-		response.sendRedirect("/member/views/userUpdateOk.me");
+//		response.sendRedirect("/member/views/userUpdateOk.me");
 
 		return null;
 	}
