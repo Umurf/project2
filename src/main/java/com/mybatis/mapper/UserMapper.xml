@@ -50,7 +50,7 @@
 	</select>
 	
 		<!-- 회원 글관리 페이지 -->
-	<select id="lookbyEmail" parameterType="SearchVO" resultType ="UserVO"> 
+	<select id="lookByEmail" parameterType="SearchVO" resultType ="UserVO"> 
 		select u.user_number, u.user_nickname, u.user_email, 
 		f.fboard_number, f.fboard_title, f.fboard_content, f.fboard_date, f.fboard_count
 		from tbl_user u join tbl_fboard f 
@@ -58,7 +58,7 @@
 		where user_email like concat('%', #{keyword}, '%')	
 	</select> 
 	
-	<select id="lookbyNickname" parameterType="SearchVO" resultType ="UserVO">
+	<select id="lookByNickname" parameterType="SearchVO" resultType ="UserVO">
 		select u.user_number, u.user_nickname, u.user_email, 
 		f.fboard_number, f.fboard_title, f.fboard_content, f.fboard_date, f.fboard_count
 		from tbl_user u join tbl_fboard f 

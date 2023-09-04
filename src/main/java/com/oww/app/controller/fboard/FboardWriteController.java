@@ -43,7 +43,7 @@ public class FboardWriteController implements Execute{
         request.getRequestDispatcher(path).forward(request, response);
         System.out.println("test4");
         // 리턴 타입에 맞게 필요한 작업을 수행하세요.
-        // 아래처럼 Result 객체를 생성하여 리턴하는 것이 일반적입니다.
+
         return new Result(); 
     }
 

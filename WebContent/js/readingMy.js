@@ -11,7 +11,7 @@ let $deleteBtn = $('.delete-btn');
 
 // 자바스크립트에서 data 속성을 소문자로 인식함**
 let fboardNumber = $('.list-btn').data("boardnumber");//data의 정보 유념
-                                       //data가 받아올 기능을 사용하기 위함
+													//data가 받아올 기능을 사용하기 위함
 console.log(fboardNumber);
 
 $listBtn.on('click', ()=>{

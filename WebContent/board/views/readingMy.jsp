@@ -38,8 +38,8 @@
                     <button class="list-btn" id="listbutton1" type="button"  data-boardnumber="${fboard.getFboardNumber()}">목록</button>
                     <c:if test="${fboard.getUserNumber() == sessionScope.userNumber}">
                        <button id="listbutton2">
-                           <a id="" href="${pageContext.request.contextPath}/board/views/fboardUpdate.fb?fboardNumber=${fboard.getFboardNumber()}">수정</a></button>
-                       <button class="delete-btn" id="listbutton3" onclick="call_confirm1()">삭제</button>
+                           <a href="${pageContext.request.contextPath}/board/views/fboardUpdate.fb?fboardNumber=${fboard.getFboardNumber()}">수정</a></button>
+                    	<button class="delete-btn" id="listbutton3" onclick="call_confirm1()">삭제</button>
                     </c:if>
                 </div>
             </div>

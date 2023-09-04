@@ -23,12 +23,11 @@ public class FboardDAO {
     }
 	public void insert(FboardDTO fboardDTO) {
 		sqlSession.insert("fboard.insert", fboardDTO);
-		}
-
-	public void delete(int fboardNumber) {
+	}
+	public void delete(int fboardNumber) {//삭제기능의 추가
 		sqlSession.delete("fboard.delete", fboardNumber);
-		}
+	}
 	public void update(FboardDTO fboardDTO) {
 		sqlSession.update("fboard.update", fboardDTO);
-		}
+	}
 }

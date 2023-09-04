@@ -58,10 +58,15 @@
 							    <div class="main-box2-content-content">
 							        <div class="main-box3-1-content-number">${user.getFboardNumber()}</div>
 							        <div class="main-box3-1-content-nickname">${user.getUserNickname()}</div>
-							        <div class="main-box3-1-content-title"><a href="">${user.getFboardTitle()}</a></div>
+							        <div class="main-box3-1-content-title">
+							        	<a href="${pageContext.request.contextPath}/board/views/fboardReadOk.fb?fboardNumber=${user.getFboardNumber()}">${user.getFboardTitle()}</a>
+							        </div>
 							        <div class="main-box3-1-content-date">${user.getFboardDate()}</div>
-							        <div class="main-box3-1-content-management">${user.getFboardCount()}</div>
-                        			<div class="main-box3-1-content-management"><button onclick="call_confirm2()"  class="management_b">글삭제</button></div>
+							        <div class="main-box3-1-content-management">${user.getFboardCount()}</div>	
+                        			<button onclick="call_confirm2()"  class="management_b">
+                        				<a href="${pageContext.request.contextPath}/board/views/fboardDeleteOk.fb?fboardNumber=${user.getFboardNumber()}">글삭제</a>
+                        			</button>
+                        			
 							    </div>
 							</c:forEach>
 		                </c:when>
@@ -106,7 +111,7 @@
 
             </div>
         </div>
-        </div>
+
     </main>
     
 	<jsp:include page="../../footer.jsp"/>

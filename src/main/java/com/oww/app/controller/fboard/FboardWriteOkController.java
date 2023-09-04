@@ -67,7 +67,8 @@ public class FboardWriteOkController implements Execute {
         System.out.println("test05");
         // 리다이렉트 설정
         result.setRedirect(true);
-        result.setPath(request.getContextPath());
+        String contextPath = request.getContextPath();
+        response.sendRedirect(contextPath + "/project/fboardListOk.fb");
 
         return null;
     }
