@@ -21,7 +21,7 @@ public class NoticeWriteController implements Execute{
 		UserDAO userDAO = new UserDAO();
 		HttpSession session = request.getSession();
 		Integer userNumber = (Integer)session.getAttribute("userNumber");
-		Integer userLevel = (Integer)session.getAttribute("userLevel");
+
 		String path = null;
 
 		System.out.println("test2");
@@ -30,13 +30,15 @@ public class NoticeWriteController implements Execute{
             path = "/member/project/login.jsp";
             //사용자 번호가 없으면 로그인 페이지로 이동
             System.out.println("test2-1");
+            request.getRequestDispatcher(path).forward(request, response);
+            return null;
         } else {
             path = "/board/project/writing.jsp";
             request.setAttribute("userNickname", userDAO.getUserNickname(userNumber));
             //사용자 번호가 있으면 글 작성 페이지로 이동
             System.out.println("test2-2");
-            
         }
+		Integer userLevel = Integer.parseInt(userDAO.getUserLevel(userNumber));
         
         System.out.println("test3");
         if(userNumber != null) {

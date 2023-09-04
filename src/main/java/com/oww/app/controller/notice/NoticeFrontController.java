@@ -52,6 +52,7 @@ public class NoticeFrontController extends HttpServlet {
 		
 		switch(target) {
 		case "/project/noticeListOk.no":
+			request.getRequestDispatcher("/board/project/freeBoard.jsp").forward(request, response);
 			result = new NoticeListOkController().execute(request, response);
 			break;
 		case "/board/views/noticeWrite.no":
