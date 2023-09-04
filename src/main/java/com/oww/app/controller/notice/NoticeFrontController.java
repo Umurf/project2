@@ -52,11 +52,11 @@ public class NoticeFrontController extends HttpServlet {
 		
 		switch(target) {
 		case "/project/noticeListOk.no":
-			request.getRequestDispatcher("/board/project/freeBoard.jsp").forward(request, response);
+			System.out.println("noticeListOk 완료");
 			result = new NoticeListOkController().execute(request, response);
 			break;
 		case "/board/views/noticeWrite.no":
-			System.out.println("=======");
+			System.out.println("noticeWrite 완료");
 			result = new NoticeWriteController().execute(request, response);
 			break;
 		case "/board/views/noticeWriteOk.no":
