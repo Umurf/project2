@@ -65,18 +65,19 @@
 		on u.user_number = f.user_number
 		where user_nickname like concat('%', #{keyword}, '%')	
 	</select>
-	<update id="updateUserNickname" parameterType="UserVO">
+	<update id="updateUserNickname" parameterType="UserDTO">
 		update tbl_user
 		set user_nickname = #{userNickname}
-		where user_email = #{userEmail}
+		where user_number = #{userNumber}
 	</update>
-	<update id="updateUserPassword" parameterType="UserVO">
+	<update id="updateUserPassword" parameterType="UserDTO">
 		update tbl_user
-		set user_password = #{newPassword}
-		where user_email = #{userEmail}
+		set user_password = #{userPassword}
+		where user_number = #{userNumber}
 	</update>
-	
-	
+	<delete id="deleteUser" parameterType="_int">
+		delete from tbl_user where user_number = #{userNumber}
+	</delete>
 </mapper>
 
 
