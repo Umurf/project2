@@ -13,7 +13,7 @@
         <div class="header-container">
             <div class="header-box1">
                 <div class="logo">
-                    <a href="${pageContext.request.contextPath}/index.jsp">
+                    <a href="${pageContext.request.contextPath}/project/indexFboardListOk.me">
                         <img src="https://ifh.cc/g/WZSvkh.png" alt="팀 로고">
                     </a>
                 </div>
