@@ -64,7 +64,7 @@
                         href="${pageContext.request.contextPath}/board/project/notice.jsp">취소</a>
                   </button>
                   <!-- 등록 버튼 -->
-                  <button class="button2" onclick="call_confirm2(event)">
+                  <button id="button2" class="button2" onclick="call_confirm2(event)">
                      <%-- <a id="button2" href="${pageContext.request.contextPath}/board/views/noticeWriteOk.no">등록</a> --%>
                   </button>
             </form>
