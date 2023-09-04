@@ -108,16 +108,22 @@ public class OwwFrontController extends HttpServlet {
 					System.out.println("관리자 게시글 페이지");
 					result = new AdminBoardController().execute(request, response);
 					break;
-				case "/views/mypage.me":
+				case "/member/views/mypage.me":
 					System.out.println("회원정보수정 페이지");
+					request.getRequestDispatcher("/member/views/mypage.jsp").forward(request, response);
 					result = new UserUpdateController().execute(request, response);
 					break;
-				case "/views/userUpdateOk.me":
+				case "/member/views/userUpdateOk.me":
 					System.out.println("회원정보수정 완료");
+//					request.getRequestDispatcher("/index.jsp").forward(request, response);
 					result = new UserUpdateOkController().execute(request, response);
 					System.out.println("============완료후");
 					break;
-		      }
+				case "/member/views/userDeleteOk.me":
+					new UserDeleteOkController().execute(request, response);
+					break;
+				}
+		      
 
 		      
 		      if(result != null) { // null 포인트 인셉션 

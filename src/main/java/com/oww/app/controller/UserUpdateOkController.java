@@ -17,15 +17,20 @@ public class UserUpdateOkController implements Execute{
 	public Result execute(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
 		UserDAO userDAO = new UserDAO();
 		UserDTO userDTO = new UserDTO();
-		userDAO.updateNickname("userNickname");
-		userDAO.updatePassword("userPassword");
 		
-	
+		String userNickname = request.getParameter("userNickname");
+		String userPassword = request.getParameter("userPassword");
+		int userNumber = (Integer)request.getSession().getAttribute("userNumber");
+		
+		userDTO.setUserNickname(userNickname);
+		userDTO.setUserPassword(userPassword);
+		userDTO.setUserNumber(userNumber);
+		
+		userDAO.updateNickname(userDTO);
+		userDAO.updatePassword(userDTO);
+		
 		response.sendRedirect(request.getContextPath());	
 		
-		
-
-
 		return null;
 	}
 
