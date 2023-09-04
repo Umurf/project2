@@ -34,11 +34,11 @@
                     
                         <c:if test="${sessionScope.userNumber != null}">
                         <div class="header-box2-img"><a href="${pageContext.request.contextPath}/member/views/alarmy.jsp">
-                          		<img src="${pageContext.request.contextPath}/img/bell3.png" alt="" >
+                          		<img src="${pageContext.request.contextPath}/img/bell3.png" alt="" ></a>
                           	</div>
                         <li>	
                          	</a>
-	                        <a id="nickname" href="${pageContext.request.contextPath}/member/views/mypage.jsp">
+	                        <a id="nickname" href="${pageContext.request.contextPath}/member/views/mypage.me">
 	                        	<c:out value="${sessionScope.userNickname}"/> 님
 	                        </a>
 	                        <a href="${pageContext.request.contextPath}/project/logoutOk.me">로그아웃</a>
