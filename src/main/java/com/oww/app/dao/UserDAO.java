@@ -24,12 +24,12 @@ public class UserDAO {
 		UserDTO user = sqlSession.selectOne("user.login", userDTO);
 		return user;
 	}
-		public boolean checkEmail(String userEmail) {
-			return (Integer)sqlSession.selectOne("user.checkEmail", userEmail) <= 0;
+	public boolean checkEmail(String userEmail) {
+		return (Integer)sqlSession.selectOne("user.checkEmail", userEmail) <= 0;
 	}
 		
-		public boolean checkNickname(String userNickname) {
-			return (Integer)sqlSession.selectOne("user.checkNickname", userNickname) <= 0;
+	public boolean checkNickname(String userNickname) {
+		return (Integer)sqlSession.selectOne("user.checkNickname", userNickname) <= 0;
 	}
 		
 	public List<UserDTO> searchByEmail(SearchVO searchVO) {
@@ -48,6 +48,14 @@ public class UserDAO {
 	
 	public List<UserVO> lookByNickname(SearchVO searchVO) {
 		return sqlSession.selectList("user.lookByNickname", searchVO);
+	}
+	
+	public UserDTO select(String userEmail) {
+		return sqlSession.selectOne(userEmail);
+	}
+	
+	public int updateUser(UserDTO userDTO) {
+		return sqlSession.update("user.updateUser", userDTO);
 	}
 }
 

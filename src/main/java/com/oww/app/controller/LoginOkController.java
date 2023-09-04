@@ -36,7 +36,11 @@ public class LoginOkController implements Execute{
 		HttpSession session = request.getSession();
 		session.setAttribute("userNumber", result.getUserNumber());
 		session.setAttribute("userNickname", result.getUserNickname());
-		
+		session.setAttribute("userEmail", result.getUserEmail());
+		System.out.println("여기까지 오나요?");
+		System.out.println(session.getAttribute("userNumber"));
+		System.out.println(session.getAttribute("userNickname"));
+		System.out.println(session.getAttribute("userEmail"));
 		
 		response.sendRedirect(request.getContextPath());
 		

@@ -113,6 +113,14 @@ public class OwwFrontController extends HttpServlet {
 					System.out.println("관리자 게시글 페이지");
 					result = new AdminBoardController().execute(request, response);
 					break;
+				case "/views/mypage.me":
+					System.out.println("회원정보수정 페이지");
+					result = new UserUpdateController().execute(request, response);
+					break;
+				case "/views/userUpdateOk.me":
+					System.out.println("회원정보수정 완료");
+					result = new UserUpdateOkController().execute(request, response);
+					break;
 		      }
 
 		      
