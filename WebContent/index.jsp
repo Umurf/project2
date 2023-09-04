@@ -50,37 +50,21 @@
 							<div class="main-communitybox-titleline">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;제목</div>
 							<div class="main-communitybox-nickname">닉네임</div>
 						</div>
-						<!-- 
-                        <div class="main-communitybox-contentbox">
-                            <div class="main-communitybox-titleline">&nbsp;&nbsp;안녕하세요 저는 오운완팀입니다.</div>
-                            <div class="main-communitybox-nickname">닉네임1</div>
-                        </div>
-                        <div class="main-communitybox-contentbox">
-                            <div class="main-communitybox-titleline">&nbsp;&nbsp;안녕하세요 저는 오운완팀입니다.</div>
-                            <div class="main-communitybox-nickname">닉네임2</div>
-                        </div>
-                        <div class="main-communitybox-contentbox">
-                            <div class="main-communitybox-titleline">&nbsp;&nbsp;안녕하세요 저는 오운완팀입니다.</div>
-                            <div class="main-communitybox-nickname">닉네임3</div>
-                        </div>
-                        <div class="main-communitybox-contentbox">
-                            <div class="main-communitybox-titleline">&nbsp;&nbsp;안녕하세요 저는 오운완팀입니다.</div>
-                            <div class="main-communitybox-nickname">닉네임4</div>
-                        </div>
-                      -->
-
 
 						<!-- 자유게시판 끝 -->
 						<!-- ========== 자유게시판게시글 목록 =========== -->
 						<c:choose>
 							<c:when test="${not empty indexFboardList}">
-								<c:forEach var="indexfboard" items="${indexFboardList}">
-									<div class="main-communitybox-contentbox">
-										<div class="main-communitybox-titleline">
-											<a href="">${indexfboard.getFboardTitle()}</a>
+								<c:forEach var="indexfboard" items="${indexFboardList}" varStatus="loop">
+									<c:if test="${loop.index < rowCount}">
+										<div class="main-communitybox-contentbox">
+											<div class="main-communitybox-titleline">
+												<a href="${pageContext.request.contextPath}/board/views/fboardReadOk.fb?fboardNumber=${indexfboard.getFboardNumber()}">
+												${indexfboard.getFboardTitle()}</a>
+											</div>
+											<div class="main-communitybox-nickname">${indexfboard.getUserNickname()}</div>
 										</div>
-										<div class="main-communitybox-nickname">${indexfboard.getUserNickname()}</div>
-									</div>
+									</c:if>
 								</c:forEach>
 							</c:when>
 
@@ -104,36 +88,20 @@
 							<div class="main-communitybox-titleline">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;제목</div>
 							<div class="main-communitybox-nickname">관리자</div>
 						</div>
-						<!--  
-                            <div class="main-communitybox-contentbox">
-                                <div class="main-communitybox-titleline">&nbsp;&nbsp;안녕하세요 저는 오운완팀입니다.</div>
-                                <div class="main-communitybox-nickname">관리자</div>
-                            </div>
-                            <div class="main-communitybox-contentbox">
-                                <div class="main-communitybox-titleline">&nbsp;&nbsp;안녕하세요 저는 오운완팀입니다.</div>
-                                <div class="main-communitybox-nickname">관리자</div>
-                            </div>
-                            <div class="main-communitybox-contentbox">
-                                <div class="main-communitybox-titleline">&nbsp;&nbsp;안녕하세요 저는 오운완팀입니다.</div>
-                                <div class="main-communitybox-nickname">관리자</div>
-                            </div>
-                            <div class="main-communitybox-contentbox">
-                                <div class="main-communitybox-titleline">&nbsp;&nbsp;안녕하세요 저는 오운완팀입니다.</div>
-                                <div class="main-communitybox-nickname">관리자</div>
-                            </div>
-                            -->
-
 				<!-- 공지사항 끝 -->
-				<!-- ========== 자유게시판게시글 목록 =========== -->
+				<!-- ========== 공지사항 목록 =========== -->
 				<c:choose>
 					<c:when test="${not empty indexNoticeList}">
-						<c:forEach var="indexnotice" items="${indexNoticeList}">
-							<div class="main-communitybox-contentbox">
-								<div class="main-communitybox-titleline">
-									<a href="">${indexnotice.getNoticeTitle()}</a>
+						<c:forEach var="indexnotice" items="${indexNoticeList}" varStatus="loop">
+							<c:if test="${loop.index < rowCount}">
+								<div class="main-communitybox-contentbox">
+									<div class="main-communitybox-titleline">
+										<a href="${pageContext.request.contextPath}/board/views/noticeReadOk.no?noticeNumber=${indexnotice.getNoticeNumber()}">
+										${indexnotice.getNoticeTitle()}</a>
+									</div>
+									<div class="main-communitybox-nickname">${indexnotice.getUserNickname()}</div>
 								</div>
-								<div class="main-communitybox-nickname">${indexnotice.getUserNickname()}</div>
-							</div>
+							</c:if>
 						</c:forEach>
 					</c:when>
 
