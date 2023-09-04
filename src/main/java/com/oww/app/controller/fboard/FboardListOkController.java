@@ -24,6 +24,9 @@ public class FboardListOkController implements Execute{
 		
 		System.out.println("FboardList 컨트롤러 테스트");
 
+        String contextPath = request.getContextPath();
+        response.sendRedirect(contextPath + "/project/fboardListOk.fb");
+        
 		return null;
 	}
 
