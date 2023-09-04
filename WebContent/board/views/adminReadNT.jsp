@@ -31,12 +31,12 @@
             </div> 
             <div class="main-box2">
                 <div class="main-box2-list-button">
-                    <button id="listbutton1" type="button" class="list-btn" data-boardnumber="${notice.getNoticeNumber()}">
-                        <a id="" href="${pageContext.request.contextPath}/project/noticeListOk.no">목록</a></button>
-                    <button id="listbutton2">
-                        <a id="" href="../views/rewriting.jsp">수정</a></button>
-                    <button id="listbutton3" onclick="call_confirm1()">
-                        <a id="" href="../pro/freeBoard.jsp">삭제</a></button>
+                    <button class="list-btn" id="listbutton1" type="button"  data-boardnumber="${notice.getNoticeNumber()}">목록</button>
+                    <c:if test="${notice.getUserNumber() == sessionScope.userNumber}">
+                       <button id="listbutton2">
+                           <a id="" href="${pageContext.request.contextPath}/board/views/noticeUpdate.no?noticeNumber=${notice.getNoticeNumber()}">수정</a></button>
+                       <button class="delete-btn" id="listbutton3" onclick="call_confirm1()">삭제</button>
+                    </c:if>
                 </div>
             </div>
     </main>
