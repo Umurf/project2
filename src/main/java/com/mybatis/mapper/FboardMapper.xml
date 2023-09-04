@@ -20,8 +20,8 @@
 	<select id="selectAll2" parameterType = "FboardVO" resultType ="FboardVO"> <!-- 테이블과 일치하지 않는 결과값을 얻기 위해 VO를 사용한다. -->
 		SELECT u.user_number, u.user_nickname, f.fboard_number, f.fboard_title, f.fboard_content, f.fboard_date, f.fboard_count 
 		FROM tbl_user u INNER JOIN tbl_fboard f 
-		ON u.user_number = f.user_number 
-		WHERE f.fboard_number = #{fboardNumber};
+		ON u.user_number = n.user_number 
+		WHERE n.notice_number = #{fboardNumber};
 	</select>
 	
 	<!-- 자우게시판 게시글 데이터 삽입 -->

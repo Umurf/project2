@@ -49,7 +49,6 @@
                     </button>
                     <!-- 등록 버튼 -->
                     <button id="button2" class="button2" onclick="call_confirm2()">
-                  <%--  <a id="button2" href="${pageContext.request.contextPath}/board/views/fboardWriteOk.fb">등록</a>--%>
                     </button>
                     </div>
                 </form>
