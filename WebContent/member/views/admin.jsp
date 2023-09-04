@@ -28,7 +28,7 @@
                                             ⊙ 검 색 어 :
                                         </span>
                                     </div>
-                                <select name="searchType" id="">
+                                <select name="searchType">
                                     <option value="email">이메일</option>
                                     <option value="nickname">닉네임</option>
                                 </select>
@@ -59,9 +59,9 @@
                                     <div class="main-box2-content-email">${user.getUserEmail()}</div>
                                     <div class="main-box2-content-nickname">${user.getUserNickname()}</div>
                                     <div class="main-box2-content-date">${user.getUserDate()}</div>
-                                    <button onclick="call_confirm()" class="management_b">
-                                    	<a href="${pageContext.request.contextPath}/board/views/.?fboardNumber=${user.getFboardNumber()}">탈퇴</a>
-                                    </button>
+		                            <div class="main-box2-content-management">
+		                            	<button onclick="call_confirm()" class="management_b" >회원탈퇴</button>
+		                            </div>
                                 </div>
                             </c:forEach>
                         </c:when>
