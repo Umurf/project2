@@ -22,13 +22,14 @@
 		FROM tbl_user u INNER JOIN tbl_fboard f 
 		ON u.user_number = f.user_number 
 		WHERE f.fboard_number = #{fboardNumber};
+
 	</select>
 	
 	<!-- 자우게시판 게시글 데이터 삽입 -->
 	<insert id="insert" parameterType="FboardDTO">
 		INSERT INTO tbl_fboard 
 		(user_number, fboard_title, fboard_date, fboard_content, fboard_count) 
-		VALUES (#{userNumber},#{fboardTitle},#{fboardDate},#{fboardContent},#{fboardCount});
+		VALUES (#{userNumber},#{fboardTitle},#{fboardDate},#{fboardContent},#{fboardCount})
 	</insert>
 	
 	<delete id="delete" parameterType="_int">
