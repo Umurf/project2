@@ -48,12 +48,14 @@ public class FboardFrontController extends HttpServlet {
 		
 		switch(target) {
 		case "/project/fboardListOk.fb":
-			System.out.println("=======");
+			System.out.println("fboardListOk");
 			result = new FboardListOkController().execute(request, response);
+			request.getRequestDispatcher("/board/project/freeBoard.jsp").forward(request, response);
 			break;
 		case "/board/views/writing.fb":
 			System.out.println("fboardWrite 완료");
 			result = new FboardWriteController().execute(request, response);
+			request.getRequestDispatcher("/board/project/writing.jsp").forward(request, response);
 			break;
 		case "/board/views/fboardWriteOk.fb":
 			System.out.println("fboardWriteOk 완료");

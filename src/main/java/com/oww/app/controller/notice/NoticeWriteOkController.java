@@ -67,8 +67,8 @@ public class NoticeWriteOkController implements Execute{
         // 리다이렉트 설정
         result.setRedirect(true);
      /*   글 목록으로 갈지 경로 설정, getRedirection으로 가지고 와서 전달해주시면 됩니다 */
-        result.setPath(request.getContextPath() + "/project/noticeListOk.no");
      
+        response.sendRedirect(request.getContextPath() + "/project/noticeListOk.no");
         return null;
     }
 }

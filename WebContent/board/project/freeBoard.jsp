@@ -90,7 +90,7 @@
             <div class="main-box4">
                 <button>
                <!--  <a id="writing-button" href="/views/fboardwrite.fb"> -->
-                <a id="writing-button" href="../views/writing.fb">
+                <a id="writing-button" href="${pageContext.request.contextPath}/board/views/writing.fb">
                 글쓰기
                 </a>
                 </button>
