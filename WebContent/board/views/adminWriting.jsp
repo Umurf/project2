@@ -15,7 +15,6 @@
 <body>
    <%@include file="../../headeradmin.jsp"%>
    <main>
-   <h1>hi!!</h1>
       <div class="main-container">
          <div class="main-box1-titlebox">
             <div class="main-box1-title">

@@ -19,12 +19,12 @@
                 </div>
                 <div class="main-box1-content">
                     <div class="main-box1-content-button">
-                        <a href="./freeBoard.jsp">
+                        <a href="${pageContext.request.contextPath}/project/fboardListOk.fb">
                             <img class="img1" src="${pageContext.request.contextPath}/img/002.png" alt="">
                             <img class="img2" src="${pageContext.request.contextPath}/img/004.png" alt=""></a>
                     </div>
                     <div class="main-box1-content-button">
-                        <a href="./notice.jsp">
+                        <a href="${pageContext.request.contextPath}/project/noticeListOk.no">
                             <img class="img1" src="${pageContext.request.contextPath}/img/001.png" alt="">
                             <img class="img2" src="${pageContext.request.contextPath}/img/005.png" alt=""></a>
                     </div>
