@@ -99,12 +99,7 @@ public class OwwFrontController extends HttpServlet {
 					System.out.println("메인페이지 자유게시판 잘됨");
 					result = new IndexFboardListOkController().execute(request, response);
 					break;
-					
-				case "/project/indexNoticeListOk.me":
-					System.out.println("메인페이지 공지사항 잘됨");
-					result = new IndexNoticeListOkController().execute(request, response);
-					break;
-				
+
 				case "/project/admin.me":
 					System.out.println("관리자 페이지");
 					result = new AdminController().execute(request, response);
