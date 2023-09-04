@@ -7,7 +7,7 @@
 	</insert>
 	
 	<select id = "login" parameterType = "UserDTO" resultType = "UserDTO">
-		select user_number, user_nickname from tbl_user where user_email = #{userEmail} AND user_password = #{userPassword}
+		select user_number, user_nickname, user_email from tbl_user where user_email = #{userEmail} AND user_password = #{userPassword}
 	</select>
 	
 		<!-- 아이디의 중복 검사 쿼리 -->
@@ -59,6 +59,17 @@
 		on u.user_number = f.user_number
 		where user_nickname like concat('%', #{keyword}, '%')	
 	</select>
+	<update id="updateUserNickname" parameterType="UserVO">
+		update tbl_user
+		set user_nickname = #{userNickname}
+		where user_email = #{userEmail}
+	</update>
+	<update id="updateUserPassword" parameterType="UserVO">
+		update tbl_user
+		set user_password = #{newPassword}
+		where user_email = #{userEmail}
+	</update>
+	
 	
 </mapper>
 
