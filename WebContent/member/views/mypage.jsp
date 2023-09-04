@@ -56,7 +56,8 @@
                             영문, 숫자를 포함한 8~12자리의 비밀번호를 입력해주세요.
                         </div>
                         <label>
-                            <input type="password" name="newPassword" placeholder="비밀번호" class="main-container-down-section04-box2">
+                            <input type="password" name="newPassword" placeholder="비밀번호" 
+                            value="${userPassword}" class="main-container-down-section04-box2">
                         </label>
                     </div>
                     <div class="main-container-down-section05">
@@ -67,7 +68,8 @@
                             비밀번호를 한 번 더 입력해 주세요.
                         </div>
                         <label>
-                            <input type="password" name="newPassword" placeholder="비밀번호 확인" class="main-container-down-section05-box2">
+                            <input type="password" name="newPassword" placeholder="비밀번호 확인" 
+                            class="main-container-down-section05-box2">
                         </label>
                     </div>
                     <div class="main-container-down-section07">

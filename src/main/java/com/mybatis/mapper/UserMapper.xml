@@ -59,11 +59,17 @@
 		on u.user_number = f.user_number
 		where user_nickname like concat('%', #{keyword}, '%')	
 	</select>
-	<update id="updateUser" parameterType="UserDTO">
+	<update id="updateUserNickname" parameterType="UserVO">
 		update tbl_user
-		set user_nickname = #{userNickname}, user_password = #{newPassword}
+		set user_nickname = #{userNickname}
 		where user_email = #{userEmail}
 	</update>
+	<update id="updateUserPassword" parameterType="UserVO">
+		update tbl_user
+		set user_password = #{newPassword}
+		where user_email = #{userEmail}
+	</update>
+	
 	
 </mapper>
 

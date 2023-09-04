@@ -23,10 +23,12 @@ public class UserUpdateController implements Execute{
 		session.getAttribute("userEmail");
 		session.getAttribute("userNickname");
 		
-		userDAO.updateUser(userDTO);
+//		userDTO.setUserEmail(request.getParameter("userEmail"));
+		userDTO.setUserNickname(request.getParameter("userNickname"));
+		userDTO.setUserPassword(request.getParameter("newPassword"));
 		System.out.println(userDTO.toString());
-	
-		response.sendRedirect(request.getContextPath());
+		
+		response.sendRedirect("/member/views/userUpdateOk.me");
 
 		return null;
 	}

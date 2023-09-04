@@ -15,9 +15,15 @@ public class UserUpdateOkController implements Execute{
 
 	@Override
 	public Result execute(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
-			
+		UserDAO userDAO = new UserDAO();
+		UserDTO userDTO = new UserDTO();
+		userDAO.updateNickname("userNickname");
+		userDAO.updatePassword("userPassword");
 		
-		response.sendRedirect("/member/views/userUpdateOk.me");
+	
+		response.sendRedirect(request.getContextPath());	
+		
+		
 
 
 		return null;

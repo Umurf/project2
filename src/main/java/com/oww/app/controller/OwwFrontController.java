@@ -120,6 +120,7 @@ public class OwwFrontController extends HttpServlet {
 				case "/views/userUpdateOk.me":
 					System.out.println("회원정보수정 완료");
 					result = new UserUpdateOkController().execute(request, response);
+					System.out.println("============완료후");
 					break;
 		      }
 

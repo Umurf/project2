@@ -54,8 +54,12 @@ public class UserDAO {
 		return sqlSession.selectOne(userEmail);
 	}
 	
-	public int updateUser(UserDTO userDTO) {
-		return sqlSession.update("user.updateUser", userDTO);
+	public int updateNickname(String userNickname) {
+		return sqlSession.update("user.updateUserNickname", userNickname);
+	}
+	
+	public int updatePassword(String newPassword) {
+		return sqlSession.update("user.updateUserPassword", newPassword);
 	}
 }
 

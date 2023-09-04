@@ -41,8 +41,9 @@ public class LoginOkController implements Execute{
 		System.out.println(session.getAttribute("userNumber"));
 		System.out.println(session.getAttribute("userNickname"));
 		System.out.println(session.getAttribute("userEmail"));
-		
+		System.out.println("========loginOk컨트롤러");
 		response.sendRedirect(request.getContextPath());
+		System.out.println("========loginOk컨트롤러");
 		
 		return null;
 	}
