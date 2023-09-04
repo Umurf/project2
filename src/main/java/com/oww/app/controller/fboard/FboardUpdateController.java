@@ -16,9 +16,9 @@ public class FboardUpdateController implements Execute{
 	
 	int fboardNumber = Integer.valueOf(request.getParameter("fboardNumber"));
 	FboardDAO fboardDAO = new FboardDAO();
-//	req.setAttribute("fboard", fboardDAO.selectAll(fboardNumber));
-	request.setAttribute("fboard", fboardDAO.selectAll());
-	//fboardList -> fboard 변경
+	
+	//selectAll2 에서 fboardNumber 정보를 받아와야 하므로 selectall2메소드를 selectone 함수를 사용해서 하나만 불러온다
+	request.setAttribute("fboard", fboardDAO.selectAll2(fboardNumber));
 
 	request.getRequestDispatcher("/board/views/rewriting.jsp").forward(request, response);
 		

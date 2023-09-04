@@ -122,5 +122,13 @@
     
 
     <jsp:include page="footer.jsp"/>
+    
+    
+<script>
+$(document).ready(function() {
+    // /project/indexFboardListOk.me로 리디렉션
+    window.location.href = "${pageContext.request.contextPath}/project/indexFboardListOk.me";
+});
+</script>
 </body>
 </html>

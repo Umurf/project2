@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,6 +8,7 @@
     <title>내 글 보기</title>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/readingMy.css">
     <script defer src="${pageContext.request.contextPath}/js/readingMy.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
     <%@include file="../../header.jsp" %>
@@ -34,12 +35,12 @@
             </div>
             <div class="main-box2">
                 <div class="main-box2-list-button">
-                    <button id="listbutton1" type="button" class="list-btn" data-boardnumber="${fboard.getFboardNumber()}">
-                        <a id="" href="${pageContext.request.contextPath}/project/fboardListOk.fb">목록</a></button>
-                    <button id="listbutton2">
-                        <a id="" href="../views/rewriting.jsp">수정</a></button>
-                    <button id="listbutton3" onclick="call_confirm1()">
-                        <a id="" href="../pro/freeBoard.jsp">삭제</a></button>
+                    <button class="list-btn" id="listbutton1" type="button"  data-boardnumber="${fboard.getFboardNumber()}">목록</button>
+                    <c:if test="${fboard.getUserNumber() == sessionScope.userNumber}">
+                       <button id="listbutton2">
+                           <a id="" href="${pageContext.request.contextPath}/board/views/fboardUpdate.fb?fboardNumber=${fboard.getFboardNumber()}">수정</a></button>
+                       <button class="delete-btn" id="listbutton3" onclick="call_confirm1()">삭제</button>
+                    </c:if>
                 </div>
             </div>
             <div class="main-box3">

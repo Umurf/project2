@@ -10,8 +10,6 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.oreilly.servlet.multipart.ParamPart;
-import com.oreilly.servlet.multipart.Part;
 import com.oww.app.Execute;
 import com.oww.app.Result;
 import com.oww.app.dao.FboardDAO;
@@ -23,20 +21,28 @@ public class FboardUpdateOkController implements Execute {
     public Result execute(HttpServletRequest request, HttpServletResponse response)
             throws IOException, ServletException {
         System.out.println("test01");
-        // FboardDAO와 FboardDTO 객체를 생성합니다.
-        FboardDAO fboardDAO = new FboardDAO();
-        FboardDTO fboardDTO = new FboardDTO();
         Result result = new Result();
-        System.out.println("test02");
-        // 현재 시간을 Timestamp로 얻습니다.
+        
+        System.out.println("FboardUpdateOkController 실행 시작");
+        
+        // 게시물 업데이트 및 삽입에 필요한 데이터를 받아옵니다.
+        String fboardTitle = request.getParameter("fboardTitle");
+        String fboardContent = request.getParameter("fboardContent");
+        String fboardNumberStr = request.getParameter("fboardNumber");
         Timestamp currentTime = new Timestamp(new Date().getTime());
-
-        // 요청에서 게시판 제목, 내용, 사용자 번호, 게시물 카운트, 작성일을 얻어와 DTO에 설정합니다.
         
-        // fboardDTO.toString() 메서드를 호출하여 DTO 내용을 출력합니다.
-        System.out.println(fboardDTO.toString());
+        // 필요한 DTO 객체를 생성하고 값 설정합니다.
+        FboardDTO fboardDTO = new FboardDTO();
+        fboardDTO.setFboardTitle(fboardTitle);
+        fboardDTO.setFboardContent(fboardContent);
+        fboardDTO.setFboardDate(currentTime);
         
-        System.out.println("test03");
+        // fboardNumber 처리
+        if (fboardNumberStr != null && !fboardNumberStr.isEmpty()) {
+            int fboardNumber = Integer.parseInt(fboardNumberStr);
+            fboardDTO.setFboardNumber(fboardNumber);
+        }
+        
         // 게시물 작성일을 문자열로부터 파싱하여 설정합니다.
         String fboardDateStr = request.getParameter("fboardDate");
         if (fboardDateStr != null && !fboardDateStr.isEmpty()) {
@@ -49,48 +55,29 @@ public class FboardUpdateOkController implements Execute {
                 e.printStackTrace();
             }
         }
-        System.out.println("test04");
-        // DTO 내용 출력 (디버깅용)
         
-        // 무한 루프를 시작합니다.
-        while (true) {
-            // ParamPart를 가져오고 파라미터명과 값을 얻어옵니다.
-        	ParamPart paramPart = (ParamPart) request.getPart("yourPartNameHere");
-            String param = paramPart.getName(); // 파라미터명
-            String value = paramPart.getStringValue(); // 값
-            System.out.println(param + " : " + value);
-
-            // 파라미터명에 따라 DTO에 값을 설정합니다.
-            if (param.equals("fboardTitle")) {
-                fboardDTO.setFboardTitle(value);
-            } else if (param.equals("fboardContent")) {
-                fboardDTO.setFboardContent(value);
-            } else if (param.equals("fboardNumber")) {
-                // jsp에서 hidden으로 추가해서 boardNumber 가져와야 함
-                int fboardNumber = Integer.valueOf(value);
-                fboardDTO.setFboardNumber(fboardNumber);
-            }
-
-            // 게시글 제목과 내용이 null이 아닌 경우에만 진행합니다.
-            if (fboardDTO.getFboardTitle() == null || fboardDTO.getFboardContent() == null) {
-                continue;
-            }
-
-            // 세션에서 사용자 번호를 얻어와 DTO에 설정합니다.
-            fboardDTO.setUserNumber((Integer) request.getSession().getAttribute("userNumber"));
-            
-            // 게시물을 업데이트합니다.
-            fboardDAO.update(fboardDTO);
-            
-            // 게시물을 데이터베이스에 삽입합니다.
-            fboardDAO.insert(fboardDTO);
-            System.out.println("test05");
-            
-            // 리다이렉트 설정
-            result.setRedirect(true);
-            result.setPath(request.getContextPath());
-
-            return null;
+        // 세션에서 사용자 번호를 얻어와 DTO에 설정합니다.
+        Integer userNumber = (Integer) request.getSession().getAttribute("userNumber");
+        if (userNumber != null) {
+            fboardDTO.setUserNumber(userNumber);
         }
+        
+        System.out.println("데이터 설정 완료: " + fboardDTO.toString());
+        
+        // FboardDAO를 사용하여 게시물 업데이트 및 삽입을 수행합니다.
+        FboardDAO fboardDAO = new FboardDAO();
+        fboardDAO.update(fboardDTO);
+        
+        // 리다이렉트 설정
+//        result.setRedirect(true);
+//        result.setPath(request.getContextPath() +"/board/views/fboardReadOk.fb?fboardNumber");
+        
+        //프론트에서 result문을 if로 사용하지 않으므로 위의 2코드는 의미가 없고 아래와 같이 sendRedirect를 사용하여 위의 기능이 완료되고 이동할 페이지를 넣어준다
+        //fboardNumber를 가지고 가야하므로 뒤에 fboardNumber="+fboardNumberStr 를 추가해준다
+        response.sendRedirect(request.getContextPath() + "/board/views/fboardReadOk.fb?fboardNumber="+fboardNumberStr);
+        
+        System.out.println("FboardUpdateOkController 종료");
+        
+        return result;
     }
 }

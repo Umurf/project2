@@ -19,19 +19,22 @@
                 <div class="main-box1-title"><div id="title1"><a href="../pro/community.html">커뮤니티</a></div><div id="title2">&gt;</div><div id="title2"><a href="../pro/freeBoard.html">자유게시판</a></div></div>
             </div>
             <div class="content-container">
-                <form id="write-form" action="${pageContext.request.contextPath}/board/boardUpdateOk.bo" 
-                method="post">
+                <form id="write-form" action="${pageContext.request.contextPath}/board/views/fboardUpdateOk.fb" method="post">
                 	<!-- 폼안에 히든으로 번호 넣기 -->
 					<input type="hidden" name="fboardNumber" value="${fboard.getFboardNumber()}">
                 
-                    <label for="title" class="content-title">제목<input type="text" id="title" name="fboardTitle" value="${fboard.getFboardTitle()}" required />
+                    <label for="title" class="content-title">제목
+                    	<input type="text" id="title" name="fboardTitle" value="${fboard.getFboardTitle()}" required />
                     </label>
-                    <div class="writer" for="author" class="content-nickname">닉네임 <input class="writer-nickname" value="${fboard.getUserNickname()}" readonly></div>
+                    <div class="writer" for="author" class="content-nickname">닉네임 
+                    	<input class="writer-nickname" value="${fboard.getUserNickname()}" readonly>
+                    </div>
                     <!-- 작성자 서버 연결시 로그인한 회원 아이디로 수정하기 -->
 
 					
                                        <!-- 줄바꾸면 안됨!!?? -->
-                    <div class="content-content">내용 <textarea name="fboardContent" required id="writing-area"><c:out value="${board.getBoardContent()}"/></textarea></div>
+                    <div class="content-content">내용 <textarea name="fboardContent" required id="writing-area"><c:out value="${fboard.getFboardContent()}"/></textarea></div>
+                     
                     <div class="addfile">
                         <div class="addfile-text">
                             <div class="addfile-text1">첨부파일</div>
@@ -40,12 +43,18 @@
                     </div>
                     <div class="addfiles">
                         <div class="addfiles1">
+                        <!--
                         <form action="">
                             <input type="file">
-                        </form>
-                        </div>
+                        </form>-->
+                        </div> 
                     </div>
-                    <div class="buttons"><button id="button1" onclick="call_confirm1()"><a id="button1" href="../views/readingMy.jsp">취소</a></button><button class="button2" onclick="call_confirm2()"><a id="button2" href="../views/readingMy.jsp">수정</a></button></div>
+                    <div class="buttons">
+                        <button id="button1" onclick="call_confirm1()">
+                            <a id="button1" href="${pageContext.request.contextPath}/project/fboardListOk.fb">취소</a>
+                        </button>
+                        <button class="button2" type="submit">수정</button>
+                    </div>
                 </form>
             </div>
         </div>
