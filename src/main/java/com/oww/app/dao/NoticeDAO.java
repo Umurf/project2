@@ -7,7 +7,6 @@ import org.apache.ibatis.session.SqlSession;
 
 import com.mybatis.config.MyBatisConfig;
 import com.oww.app.dto.NoticeDTO;
-import com.oww.app.vo.FboardVO;
 import com.oww.app.vo.NoticeVO;
 
 public class NoticeDAO {

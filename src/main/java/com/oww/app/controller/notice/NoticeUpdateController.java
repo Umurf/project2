@@ -17,7 +17,7 @@ public class NoticeUpdateController  implements Execute{
 	int noticeNumber = Integer.valueOf(request.getParameter("noticeNumber"));
 	NoticeDAO noticeDAO = new NoticeDAO();
 //	req.setAttribute("notice", noticeDAO.selectAll(noticeNumber));
-	request.setAttribute("notice", noticeDAO.selectAll());
+	request.setAttribute("notice", noticeDAO.selectAll2(noticeNumber));
 
 
 	request.getRequestDispatcher("/board/views/adminRewriting.jsp").forward(request, response);

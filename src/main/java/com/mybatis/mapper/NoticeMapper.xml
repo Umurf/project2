@@ -15,6 +15,15 @@
 		from tbl_user u join tbl_notice n 
 		on u.user_number = n.user_number 
 	</select>
+	
+		<!-- 공지사항 글 보기 쿼리 -->
+	<select id="selectAll2" parameterType = "NoticeVO" resultType ="NoticeVO"> <!-- 테이블과 일치하지 않는 결과값을 얻기 위해 VO를 사용한다. -->
+		SELECT u.user_number, u.user_nickname, n.notice_number, n.notice_title, n.notice_content, n.notice_date, n.notice_count 
+		FROM tbl_user u INNER JOIN tbl_notice n  
+		ON u.user_number = n.user_number 
+		WHERE n.notice_number = #{noticeNumber}
+	</select>
+	
 	<select id="selectPage" resultType="NoticeVO" parameterType="map">
 		select u.user_number, u.user_Email, n.notice_number , n.notice_title , n.notice_content , n.notice_date , n.notice_count
 		from tbl_user u join tbl_notice n
@@ -45,12 +54,5 @@
 		set notice_title = #{noticeTitle}, notice_content = #{noticeContent}
 		where notice_number = #{noticeNumber}
 	</update>
-	
-	<!-- 공지사항 글 보기 쿼리 -->
-	<select id="selectAll2" parameterType = "NoticeVO" resultType ="NoticeVO"> <!-- 테이블과 일치하지 않는 결과값을 얻기 위해 VO를 사용한다. -->
-		SELECT u.user_number, u.user_nickname, n.notice_number, n.notice_title, n.notice_content, n.notice_date, n.notice_count 
-		FROM tbl_user u INNER JOIN tbl_notice n 
-		ON u.user_number = n.user_number 
-		WHERE n.notice_number = #{noticeNumber};
-	</select>
+
 </mapper>
