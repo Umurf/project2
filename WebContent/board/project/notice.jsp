@@ -108,7 +108,7 @@
             </div>
             
              <div class="main-box4">
-                <button><a id="writing-button" href="../views/noticeWrite.no">글쓰기</a></button>
+                <button><a id="writing-button" href="${pageContext.request.contextPath}/board/views/noticeWrite.no?userLevel=${user.getuserLevel()}">글쓰기</a></button>
             </div>
         </div>
     </main>

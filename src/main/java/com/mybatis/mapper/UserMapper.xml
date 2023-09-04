@@ -39,9 +39,14 @@
 		where user_nickname like concat('%', #{keyword}, '%')
 	</select>
 	
-		<!-- 글쓰기 쿼리-->
+	<!-- 글쓰기 쿼리-->
 	<select id="getUserNickname" parameterType="_int" resultType="string">
 		select user_nickname from tbl_user where user_number = #{userNumber}
+	</select>
+	
+	<!-- 관리자 레벨 쿼리-->
+	<select id="getUserLevel" parameterType="_int" resultType="string">
+		select user_level from tbl_user where user_number = #{userNumber}
 	</select>
 	
 		<!-- 회원 글관리 페이지 -->
@@ -52,6 +57,7 @@
 		on u.user_number = f.user_number
 		where user_email like concat('%', #{keyword}, '%')	
 	</select> 
+	
 	<select id="lookbyNickname" parameterType="SearchVO" resultType ="UserVO">
 		select u.user_number, u.user_nickname, u.user_email, 
 		f.fboard_number, f.fboard_title, f.fboard_content, f.fboard_date, f.fboard_count

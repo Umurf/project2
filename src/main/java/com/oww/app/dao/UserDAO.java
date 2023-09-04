@@ -49,6 +49,9 @@ public class UserDAO {
 	public List<UserVO> lookByNickname(SearchVO searchVO) {
 		return sqlSession.selectList("user.lookByNickname", searchVO);
 	}
+	public String getUserLevel(int userNumber) {
+		return sqlSession.selectOne("user.getUserLevel", userNumber);
+	}
 }
 
 
