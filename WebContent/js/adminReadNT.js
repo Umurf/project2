@@ -1,13 +1,3 @@
-
-function call_confirm(){
-    if(confirm("글을 삭제하시겠습니까?")){
-        alert("글이 삭제되었습니다.");
-        location.href="./notice.html";
-    }else{
-        
-    }
-}
-
 function call_confirm1(){
     if(confirm("글을 삭제하시겠습니까?")){
         alert("글이 삭제되었습니다.");
@@ -21,12 +11,12 @@ let $modifyBtn = $('.modify-btn');
 let $deleteBtn = $('.delete-btn');
 
 // 자바스크립트에서 data 속성을 소문자로 인식함**
-let fboardNumber = $('.list-btn').data("boardnumber");//data의 정보 유념
+let noticeNumber = $('.list-btn').data("boardnumber");//data의 정보 유념
                                        //data가 받아올 기능을 사용하기 위함
-console.log(fboardNumber);
+console.log(noticeNumber);
 
 $listBtn.on('click', ()=>{
-window.location.href = '/oww_team_project/project/fboardListOk.fb';
+window.location.href = '/oww_team_project/project/noticeListOk.no';
 });
 
 /*$modifyBtn.on('click', ()=>{
@@ -34,5 +24,5 @@ window.location.href = `../view/fboardUpdateOk.fb?boardNumber=${fboardNumber}`;
 });
 */
 $deleteBtn.on('click', ()=>{
-window.location.href = `/oww_team_project/board/views/fboardDeleteOk.fb?fboardNumber=${fboardNumber}`;
+window.location.href = `/oww_team_project/board/views/noticeDeleteOk.no?noticeNumber=${noticeNumber}`;
 });

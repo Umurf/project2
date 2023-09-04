@@ -13,12 +13,24 @@ import com.oww.app.dao.NoticeDAO;
 public class NoticeDeleteOkController implements Execute{
 	@Override
 	public Result execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+	System.out.println("test01");
 	NoticeDAO noticeDAO = new NoticeDAO();
+	Result result = new Result();
+	System.out.println("test02");
 	int noticeNumber = Integer.valueOf(request.getParameter("noticeNumber"));
 
+	System.out.println("test03");
+	
 	noticeDAO.delete(noticeNumber);
+		
+	System.out.println("test04");
 
-	response.sendRedirect("/board/boardListOk.bo");
+    result.setRedirect(true);
+    result.setPath(request.getContextPath());
+		
+    String contextPath = request.getContextPath();
+    response.sendRedirect(contextPath + "/project/noticeListOk.no");
 		
 	return null;
 	}
