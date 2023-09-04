@@ -8,7 +8,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.oww.app.Result;
+import com.oww.app.controller.fboard.FboardDeleteOkController;
 import com.oww.app.controller.fboard.FboardListOkController;
+import com.oww.app.controller.fboard.FboardUpdateController;
+import com.oww.app.controller.fboard.FboardUpdateOkController;
 
 /**
  * Servlet implementation class NoticeFrontController
@@ -58,6 +61,22 @@ public class NoticeFrontController extends HttpServlet {
 		case "/board/views/noticeWriteOk.no":
 			System.out.println("noticeWriteOk-게시글 작성들어가기");
 			result = new NoticeWriteOkController().execute(request, response);
+			break;
+		case "/board/views/noticeDeleteOk.no":
+			System.out.println("noticeDeleteOk 완료");
+			result = new NoticeDeleteOkController().execute(request, response);
+			break;
+		case "/board/views/noticeUpdate.no":
+			System.out.println("noticeUpdate 완료");
+			result = new NoticeUpdateController().execute(request, response);
+			break;
+		case "/board/views/noticeUpdateOk.no":
+			System.out.println("noticeUpdateOk 완료");
+			result = new NoticeUpdateOkController().execute(request, response);
+			break;
+		case "/board/views/noticeReadOk.no":
+			System.out.println("noticeReadOk 완료");
+			result = new NoticeReadOkController().execute(request, response);
 			break;
 		}
 		

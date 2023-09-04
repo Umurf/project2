@@ -33,7 +33,8 @@
             </div>
             <div class="main-box2">
                 <div class="main-box2-titlebox">
-                    <div class="main-box2-title"><a href="${pageContext.request.contextPath}/community.jsp">커뮤니티</a><div id="title2">&gt;</div><div id="title2">자유게시판</div></div>
+                    <div class="main-box2-title"><a href="${pageContext.request.contextPath}/community.jsp">커뮤니티</a>
+                    <div id="title2">&gt;</div><div id="title2">자유게시판</div></div>
                 </div>
                 	<div class="main-box2-content">
 	                    <div class="main-box2-content-content1" id="content-category">

@@ -43,18 +43,16 @@
 	                        <div class="main-box2-content-date1">작성날짜</div>
 	                        <div class="main-box2-content-count1">조회수</div>
 	                    </div>
-     	           <!-- ========== 게시글 목록 =========== -->
+	           <!-- ========== 게시글 목록 =========== -->
                 <c:choose>
 	                <c:when test = "${not empty noticeList}">
-						<c:forEach var="notice" items="${noticeList}" varStatus="loop">
-							<c:if test="${loop.index < rowCount}">
-							    <div class="main-box2-content-content">
-							        <div class="main-box2-content-title"><a href="">${notice.getNoticeTitle()}</a></div>
-							        <div class="main-box2-content-nickname">${notice.getUserNickname()}</div>
-							        <div class="main-box2-content-date">${notice.getNoticeDate()}</div>
-							        <div class="main-box2-content-count">${notice.getNoticeCount()}</div>
-							    </div>
-						    </c:if>
+						<c:forEach var="notice" items="${noticeList}">
+						    <div class="main-box2-content-content">
+						        <div class="main-box2-content-title"><a href="${pageContext.request.contextPath}/board/views/noticeReadOk.no?noticeNumber=${notice.getNoticeNumber()}">${notice.getNoticeTitle()}</a></div>
+						        <div class="main-box2-content-nickname">${notice.getUserNickname()}</div>
+						        <div class="main-box2-content-date">${notice.getNoticeDate()}</div>
+						        <div class="main-box2-content-count">${notice.getNoticeCount()}</div>
+						    </div>
 						</c:forEach>
 	                </c:when>
 	                
@@ -64,6 +62,7 @@
 	          		</tr>
 	          	</c:otherwise>
 	         </c:choose>
+	         <!-- ========== 게시글 목록 끝=========== -->
      
      
                 </div>
